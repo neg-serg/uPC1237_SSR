@@ -1,11 +1,11 @@
 {
   "schema": "uPC1237_SSR/ci-results/1",
-  "generated_at": "2026-09-24T12:29:37Z",
-  "root": "/tmp/ssr-prot/work/uPC1237_SSR",
+  "generated_at": "2026-09-24T14:17:58Z",
+  "root": "/home/neg/src/spice_device/uPC1237_SSR",
   "ngspice": "ngspice-45",
   "command": "nix shell nixpkgs#ngspice -c ngspice -b <test.cir>",
   "host": "Linux 6.18.44 x86_64",
-  "git_commit": "",
+  "git_commit": "f95238a",
   "summary": {
     "total": 22,
     "passed": 22,
@@ -15,11 +15,11 @@
   "tests": [
     {
       "test": "TC10_failsafe",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC10_failsafe.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC10_failsafe.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC10_failsafe.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC10_failsafe.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.800,
+      "duration_s": 2.870,
       "measurements": {
         "iled_after": 1.068670E-11,
         "vcs_after": 0.1102680,
@@ -61,11 +61,11 @@
     },
     {
       "test": "TC11_worstcase",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC11_worstcase.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC11_worstcase.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC11_worstcase.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC11_worstcase.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 1.228,
+      "duration_s": 1.265,
       "measurements": {
         "ikey": -9.979800,
         "rds_each": 0.00309619,
@@ -107,11 +107,11 @@
     },
     {
       "test": "TC12_hot_start",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC12_hot_start.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC12_hot_start.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC12_hot_start.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC12_hot_start.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.589,
+      "duration_s": 2.620,
       "measurements": {
         "vcs_min": 0.09983614,
         "vg_max": 0.1155437,
@@ -149,11 +149,11 @@
     },
     {
       "test": "TC13a_ind_load",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC13a_ind_load.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC13a_ind_load.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC13a_ind_load.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC13a_ind_load.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 4.510,
+      "duration_s": 4.560,
       "measurements": {
         "ikey0": 5.190380,
         "t_det": 5.00043,
@@ -194,11 +194,11 @@
     },
     {
       "test": "TC13b_ind_dead_amp",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC13b_ind_dead_amp.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC13b_ind_dead_amp.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC13b_ind_dead_amp.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC13b_ind_dead_amp.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 4.478,
+      "duration_s": 4.521,
       "measurements": {
         "vgs_off": 0.2517684,
         "vsw_pk": 54.69441
@@ -223,11 +223,11 @@
     },
     {
       "test": "TC14_vcc60",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC14_vcc60.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC14_vcc60.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC14_vcc60.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC14_vcc60.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.557,
+      "duration_s": 2.564,
       "measurements": {
         "iled": 0.01105203,
         "vdly_on": 4.36210,
@@ -277,11 +277,11 @@
     },
     {
       "test": "TC15_vcc25",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC15_vcc25.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC15_vcc25.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC15_vcc25.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC15_vcc25.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.540,
+      "duration_s": 2.577,
       "measurements": {
         "iled": 0.01105203,
         "vdly_on": 4.35997,
@@ -331,11 +331,11 @@
     },
     {
       "test": "TC16_dc_trip_vcc60",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC16_dc_trip_vcc60.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC16_dc_trip_vcc60.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC16_dc_trip_vcc60.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC16_dc_trip_vcc60.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.839,
+      "duration_s": 2.867,
       "measurements": {
         "t_delay": 0.176212,
         "t_det": 5.17621,
@@ -385,11 +385,11 @@
     },
     {
       "test": "TC17_speaker_rl_bemf",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC17_speaker_rl_bemf.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC17_speaker_rl_bemf.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC17_speaker_rl_bemf.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC17_speaker_rl_bemf.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 7.963,
+      "duration_s": 8.190,
       "measurements": {
         "e_clamp": 0.03154413,
         "ikey0": 5.189323,
@@ -429,8 +429,8 @@
     },
     {
       "test": "TC18_blocking",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC18_blocking.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC18_blocking.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC18_blocking.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC18_blocking.log",
       "status": "PASS",
       "exit_code": 0,
       "duration_s": 2.856,
@@ -494,11 +494,11 @@
     },
     {
       "test": "TC1_power_on",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC1_power_on.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC1_power_on.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC1_power_on.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC1_power_on.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.503,
+      "duration_s": 2.559,
       "measurements": {
         "iled": 0.01105203,
         "vcs": 7.435243E-14,
@@ -595,11 +595,11 @@
     },
     {
       "test": "TC2_rds25",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC2_rds25.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC2_rds25.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC2_rds25.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC2_rds25.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 1.211,
+      "duration_s": 1.224,
       "measurements": {
         "ikey": -9.981038,
         "rds_key": -0.00519770,
@@ -627,11 +627,11 @@
     },
     {
       "test": "TC2b_rds100",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC2b_rds100.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC2b_rds100.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC2b_rds100.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC2b_rds100.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 1.228,
+      "duration_s": 1.233,
       "measurements": {
         "ikey": -9.980173,
         "rds_key": -0.00589257,
@@ -659,11 +659,11 @@
     },
     {
       "test": "TC3_dc_pos",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC3_dc_pos.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC3_dc_pos.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC3_dc_pos.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC3_dc_pos.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.887,
+      "duration_s": 2.871,
       "measurements": {
         "t_delay": 0.176212,
         "t_det": 5.17621,
@@ -738,11 +738,11 @@
     },
     {
       "test": "TC4_dc_neg",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC4_dc_neg.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC4_dc_neg.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC4_dc_neg.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC4_dc_neg.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.881,
+      "duration_s": 2.883,
       "measurements": {
         "t_delay": 0.0328796,
         "t_det": 5.03288,
@@ -817,11 +817,11 @@
     },
     {
       "test": "TC5_overload",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC5_overload.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC5_overload.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC5_overload.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC5_overload.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 1.372,
+      "duration_s": 1.382,
       "measurements": {
         "ikey_off": 0.00008503780,
         "ikey_pre": 0.0001282381,
@@ -878,11 +878,11 @@
     },
     {
       "test": "TC6_acoff",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC6_acoff.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC6_acoff.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC6_acoff.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC6_acoff.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.612,
+      "duration_s": 2.707,
       "measurements": {
         "t_acloss": 5.07075,
         "t_off": 8.86332E-7,
@@ -920,11 +920,11 @@
     },
     {
       "test": "TC7a_latch",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC7a_latch.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC7a_latch.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC7a_latch.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC7a_latch.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.843,
+      "duration_s": 2.879,
       "measurements": {
         "vcs_after": -1.136993,
         "vcs_fault": 0.04061247,
@@ -976,11 +976,11 @@
     },
     {
       "test": "TC7b_autoreset",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC7b_autoreset.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC7b_autoreset.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC7b_autoreset.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC7b_autoreset.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 2.797,
+      "duration_s": 2.775,
       "measurements": {
         "vcs_after": -4.812175E-15,
         "vcs_fault": 0.04092274,
@@ -1021,11 +1021,11 @@
     },
     {
       "test": "TC8_signal8",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC8_signal8.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC8_signal8.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC8_signal8.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC8_signal8.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 4.911,
+      "duration_s": 4.982,
       "measurements": {
         "imax": 2.495441,
         "loss_db": -0.00564144,
@@ -1076,11 +1076,11 @@
     },
     {
       "test": "TC8b_signal4",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC8b_signal4.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC8b_signal4.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC8b_signal4.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC8b_signal4.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 5.004,
+      "duration_s": 5.055,
       "measurements": {
         "imax": 3.734876,
         "loss_db": -0.0112794,
@@ -1131,11 +1131,11 @@
     },
     {
       "test": "TC9_soa",
-      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC9_soa.cir",
-      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC9_soa.log",
+      "file": "/home/neg/src/spice_device/uPC1237_SSR/tests/TC9_soa.cir",
+      "log": "/home/neg/src/spice_device/uPC1237_SSR/ci_logs/TC9_soa.log",
       "status": "PASS",
       "exit_code": 0,
-      "duration_s": 3.830,
+      "duration_s": 3.878,
       "measurements": {
         "e_analytic": 0.000312454,
         "e_int": 0.003954620,

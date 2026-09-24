@@ -9,7 +9,7 @@ Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 Using SPARSE 1.3 as Direct Linear Solver
 Operating point simulation skipped by 'uic',
   now using transient initial conditions.
- Reference value :  1.00000e-07 Reference value :  4.26339e-01 Reference value :  8.55649e-01 Reference value :  1.28507e+00 Reference value :  1.71246e+00 Reference value :  2.13970e+00 Reference value :  2.57000e+00 Reference value :  2.99918e+00 Reference value :  3.44054e+00 Reference value :  3.88269e+00 Reference value :  4.32191e+00 Reference value :  4.75322e+00 Reference value :  5.17385e+00 Reference value :  5.60320e+00
+ Reference value :  1.00000e-07 Reference value :  4.18789e-01 Reference value :  8.37749e-01 Reference value :  1.26270e+00 Reference value :  1.68980e+00 Reference value :  2.11672e+00 Reference value :  2.54245e+00 Reference value :  2.96663e+00 Reference value :  3.39127e+00 Reference value :  3.81798e+00 Reference value :  4.24500e+00 Reference value :  4.66965e+00 Reference value :  5.09242e+00 Reference value :  5.51398e+00 Reference value :  5.93692e+00
 No. of Data Rows : 600263
 
   Measurements for Transient Analysis
@@ -24,17 +24,17 @@ e_int               =  3.954620e-03
 e_analytic          =  3.12454e-04
 
 
-Total analysis time (seconds) = 3.48818
+Total analysis time (seconds) = 3.54265
 
-Total elapsed time (seconds) = 3.493 
+Total elapsed time (seconds) = 3.548 
 
 Total DRAM available = 61942.242 MB.
-DRAM currently available = 11831.453 MB.
-Maximum ngspice program size =   51.703 MB.
-Current ngspice program size =   37.762 MB.
+DRAM currently available = 11244.953 MB.
+Maximum ngspice program size =   51.715 MB.
+Current ngspice program size =   37.617 MB.
 
-Shared ngspice pages =    8.141 MB.
+Shared ngspice pages =    7.984 MB.
 Text (code) pages =    6.512 MB.
 Stack = 0 bytes.
-Library pages =   29.574 MB.
+Library pages =   29.586 MB.
 
