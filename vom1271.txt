@@ -1,0 +1,462 @@
+                                                                                                                           VOM1271
+                       www.vishay.com
+                                                                                                         Vishay Semiconductors
+          Photovoltaic MOSFET Driver With Integrated Fast Turn-Off,
+                            Solid-State Relay
+                                                                              FEATURES
+                                                                              • Open circuit voltage at IF = 10 mA, 8.4 V typical
+                                                                              • Short circuit current at IF = 10 mA, 15 μA typical
+                                              1                   4
+                                                                              • Isolation test voltage 3750 VRMS
+                                                           Turn
+                                                            Off               • Logic compatible input
+                                                                              • High reliability
+                                              2                   3
+                                                                              • Integrated rapid turn-off circuitry
+    i179066_6
+                                                                              • Material categorization:
+                                                                                for definitions of compliance please see
+                                                                                www.vishay.com/doc?99912
+
+                                                                              APPLICATIONS
+LINKS TO ADDITIONAL RESOURCES                                                 • High-side driver
+
+                     3D 3D                                                    • Solid-state relays
+ Design Tools       3D Models    Footprints       Models                      • Floating power supply
+                                                                              • Power control
+DESCRIPTION                                                                   • Data acquisition
+The VOM1271 is a stand-alone optically isolated MOSFET                        • ATE
+driver. Unlike conventional MOSFET drivers, which require
+an external power supply to provide VCC and or VDD rails to                   • Isolated solenoid drivers
+the driver itself, the VOM1271 obtains all the required                       • Isolated high current relay drivers
+current to drive its internal circuitry from the LED current on               • Isolated high voltage relay drivers
+the low voltage primary side of the isolation barrier. This
+saves the designer the space and cost associated with                         AGENCY APPROVALS
+providing one or more external power supplies. The
+                                                                              • UL
+VOM1271 also integrates a turn-off circuit internal to the
+component itself, thus doing away with the need for                           • cUL
+additional components in order to increase the overall                        • VDE
+switching speed by decreasing the turn-off time. These                        • FIMKO
+features, combined with a small SOP4 package, provide
+designers with a small footprint, highly integrated isolated
+gate driver solution for a large variety of MOSFET driver
+applications.
+
+
+
+  ORDERING INFORMATION
+
+                V            O           M             1              2   7             1            T
+                                                                                                                            SOP-4
+                                                  PART NUMBER                                      TAPE
+                                                                                                   AND
+                                                                                                   REEL
+
+  PACKAGE                                                                               UL, cUL, FIMKO
+  SOP-4                                                                                     VOM1271T
+Note
+• For additional information on the available options refer to option information. The product is available only on tape and reel
+
+
+
+
+Rev. 1.9, 08-Aug-2023                                            1                              Document Number: 83469
+                                For technical questions, contact: optocoupleranswers@vishay.com
+        THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                       ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                                           VOM1271
+                      www.vishay.com
+                                                                                                                Vishay Semiconductors
+
+     ABSOLUTE MAXIMUM RATINGS (Tamb = 25 °C, unless otherwise specified)
+     PARAMETER                                    TEST CONDITION                  SYMBOL                        VALUE                            UNIT
+     SSR
+     LED continous forward current                                                  IF                            50                             mA
+     LED reverse voltage                               IR ≤ 10 μA                   VR                            5                               V
+     Ambient operating temperature range                                           Tamb                       -40 to +100                         °C
+     Storage temperature range                                                     Tstg                       -40 to +125                         °C
+     Pin soldering temperature (1)                      t = 10 s                   Tsld                          260                              °C
+Notes
+• Stresses in excess of the absolute maximum ratings can cause permanent damage to the device. Functional operation of the device is not
+    implied at these or any other conditions in excess of those given in the operational sections of this document. Exposure to absolute
+    maximum ratings for extended periods of the time can adversely affect reliability.
+(1) Refer to reflow profile for soldering conditions for surface mounted devices (SOP)
+
+
+
+
+     ELECTRICAL CHARACTERISTICS (Tamb = 25 °C, unless otherwise specified)
+     PARAMETER                                          TEST CONDITION                   SYMBOL         MIN.                TYP.          MAX.          UNIT
+     LED forward voltage                                     IF = 10 mA                      VF          1.2                1.4           1.6                V
+                                                              IF = 5 mA                     VOC           -                 8.1            -                 V
+                                                             IF = 10 mA                     VOC          7.8                8.4            -                 V
+     Open circuit voltage
+                                                             IF = 20 mA                     VOC           -                 8.7            -                 V
+                                                             IF = 30 mA                     VOC           -                 8.9            -                 V
+                                                              IF = 5 mA                      ISC          -                 7.0            -             μA
+                                                             IF = 10 mA                      ISC         6.0                15.0           -             μA
+     Short circuit current
+                                                             IF = 20 mA                      ISC          -                 30.0           -             μA
+                                                             IF = 30 mA                      ISC          -                 47.0           -             μA
+Note
+• Minimum and maximum values are testing requirements. Typical values are characteristics of the device and are the result of engineering
+  evaluations. Typical values are for information only and are not part of the testing requirements.
+
+
+     SWITCHING CHARACTERISTICS (Tamb = 25 °C, unless otherwise specified)
+     PARAMETER                                          TEST CONDITION                   SYMBOL         MIN.                TYP.          MAX.          UNIT
+     Turn-on time                                   CL = 200 pF, IF = 20 mA,                 ton          -                 53             -             μs
+     Turn-off time                                PW = 2 ms, duty cycle = 50 %               toff         -                 65             -             μs
+
+
+
+                             VOM1271
+              1                               4
+
+
+                                                                                         Input
+
+                                              200 pF
+                                       Turn                10 M:       VOC, ISC
+IF                                     OFF                                                                            ton          toff
+
+
+                                                                                         Output        90 %
+
+                                                                                                                                                      10 %
+              2                               3
+
+
+
+
+                                                       Fig. 1 - ton, toff Test Circuit and Waveforms
+
+
+
+
+Rev. 1.9, 08-Aug-2023                                             2                              Document Number: 83469
+                                 For technical questions, contact: optocoupleranswers@vishay.com
+         THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                        ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                                                                     VOM1271
+                        www.vishay.com
+                                                                                                                                    Vishay Semiconductors
+
+  SAFETY AND INSULATION RATINGS
+  PARAMETER                                                                  TEST CONDITION                                   SYMBOL                     VALUE                   UNIT
+  Climatic classification                                             According to IEC 68 part 1                                                    55 / 110 / 21
+  Pollution degree                                                    According to DIN VDE 0109                                                           2
+  Comparative tracking index                                             Insulation group IIIa                                     CTI                   175
+  Maximum rated withstanding isolation voltage                      According to UL1577, t = 1 min                                 VISO                      3750                VRMS
+  Maximum transient isolation voltage                               According to DIN EN 60747-5-5                                 VIOTM                      6000                Vpeak
+  Maximum repetitive peak isolation voltage                         According to DIN EN 60747-5-5                                 VIORM                       707                Vpeak
+                                                                          Tamb = 25 °C, VIO = 500 V                                RIO                       ≥ 1012                   Ω
+  Isolation resistance
+                                                                      Tamb = 100 °C, VIO = 500 V                                   RIO                       ≥ 1011                   Ω
+  Output safety power                                                                                                              PSO                        350                 mW
+  Input safety current                                                                                                               ISI                      150                 mA
+  Input safety temperature                                                                                                           TS                       175                     °C
+  Creepage distance                                                                SOP-4                                                                      ≥5                  mm
+  Clearance distance                                                               SOP-4                                                                      ≥5                  mm
+  Insulation thickness                                                                                                              DTI                      ≥ 0.4                mm
+Note
+• As per DIN EN 60747-5-5, § 7.4.3.8.2, this optocoupler is suitable for “safe electrical insulation” only within the safety ratings. Compliance
+  with the safety ratings shall be ensured by means of protective circuits.
+
+TYPICAL CHARACTERISTICS (Tamb = 25 °C, unless otherwise specified)
+
+                   10                                                                                          12
+                            RL = 1 M:
+                    9                                                                                          11
+                    8
+                                                                                                               10
+                    7
+                    6                                                                                           9                                  IF = 10 mA
+
+        VOC (V)                                                                                   VOC (V)
+                                    RL = 500 k:
+                    5                                                                                           8                                              IF = 30 mA
+                    4
+                                                                                                                7
+                    3
+                                                                                                                6                                       IF = 5 mA
+                    2
+                    1                                                                                           5
+
+                   0                                                                                            4
+                        0     5   10 15 20 25 30 35 40 45 50                                                        -40     -20      0      20      40        60      80   100
+                                           IF (mA)                                                                            Ambient Temperature (°C)
+
+       Fig. 2 - Output Open Circuit Voltage vs. LED Current                                Fig. 4 - Output Open Circuit Voltage vs. Ambient Temperature
+
+                                                                                                                                            Axis Title
+                   60                                                                                         700                                                                10000
+
+
+                   50                                                                                         600
+
+                                                       IF = 30 mA
+                                                                                                              500
+                   40                                                                                                                                                            1000
+                                                                                                 2 line                                          TOFF
+
+        ISC (µA)
+                                                                                                              400                                                                          1st line
+                   30                                                                         ton ,toff(µs)                    TON
+                                                                                                              300                                                                          2nd line
+                   20
+                                            IF = 10 mA                                                                                                                           100
+                                                                                                              200
+                   10
+                                                                                                              100
+                              IF = 5 mA
+                    0
+                        -40   -20     0   20      40     60    80   100                                         0                                                                10
+                                                                                                                    0         10           20           30          40      50
+                                  Ambient Temperature (°C)                                                                         IF - Forward Current (mA)
+
+
+  Fig. 3 - Output Short-Circuit Current vs. Ambient Temperature                                                           Fig. 5 - ton, toff vs. LED Current
+
+
+Rev. 1.9, 08-Aug-2023                                          3                              Document Number: 83469
+                              For technical questions, contact: optocoupleranswers@vishay.com
+      THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                     ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                                                                               VOM1271
+                                             www.vishay.com
+                                                                                                                                                  Vishay Semiconductors
+
+
+                                 2.0                                                                                                 80
+                                 1.8                                                                                                                  IF = 45 mA
+                                                                                                                                     70
+                                 1.6
+                                                                                                                                     60
+                                 1.4                                                                                                                  IF = 35 mA
+                                 1.2                                                                                                 50
+
+             IR (µA)                                                                                                     ISC (µA)
+                                 1.0                                                                                                 40               IF = 25 mA
+
+                                 0.8                                                                                                 30
+                                 0.6           0 °C                                                                                                   IF = 15 mA
+                                                                                                                                     20
+                                 0.4
+                                                                                                                                     10               IF = 5 mA
+                                 0.2
+                                             100 °C
+                                   0                                                                                                  0
+                                        20        21          22       23      24        25                                               0   1   2       3   4    5   6   7   8   9   10
+                                                                VR (V)                                                                                        VOC (V)
+
+
+                               Fig. 6 - LED Reverse Current vs. Reverse Voltage                                                     Fig. 8 - Short Circuit Output Current vs.
+                                                                                                                                          Open Circuit Output Voltage
+
+
+                                                               Axis Title
+                                100                                                            10000
+
+
+                                               Tamb = 100 °C
+
+
+
+            2nd line
+                                              Tamb = 85 °C
+                                 10                                                            1000
+
+                                                                                                       1st line
+                                                                                                       2nd line
+                                             Tamb = 25 °C
+
+
+   IF - Forward Current (mA)      1                                                            100
+                                         Tamb = -40 °C
+
+
+
+
+                                 0.1                                                           10
+                                       0.8        1.0        1.2         1.4       1.6   1.8
+                                                        VF - Forward Voltage (V)
+
+
+                 Fig. 7 - LED Forward Voltage vs. LED Forward Current
+
+
+APPLICATION EXAMPLE
+
+
+                               VOM1271                         4                                                      VOM1271                         4
+        1
+                                                         +                                                        1
+                                                                                                                                              +
+                                              TURN                                                                                   TURN
+                                               OFF                                                                                    OFF
+
+     2
+                                                         -     3
+                                                                                                                  2
+                                                                                                                                              -       3
+
+
+                                       Bidirectional MOSFET Driver Application                                                      Single MOSFET Driver Application
+
+                                                                   Fig. 9 - Typical MOSFET Driver Applications with Integrated Fast Turn-Off
+
+
+
+
+Rev. 1.9, 08-Aug-2023                                                    4                              Document Number: 83469
+                                        For technical questions, contact: optocoupleranswers@vishay.com
+                THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                               ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                  VOM1271
+                 www.vishay.com
+                                                                                 Vishay Semiconductors
+PACKAGE DIMENSIONS in millimeters
+
+
+
+
+PACKAGE MARKING (example)
+                                                      M1271
+                                                      V XXXX
+                                                          68
+                                     Pin one dimple
+
+Note
+• XXXX = LMC (lot marking code)
+
+
+
+
+Rev. 1.9, 08-Aug-2023                                         5                              Document Number: 83469
+                             For technical questions, contact: optocoupleranswers@vishay.com
+     THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                    ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                                                              VOM1271
+                                    www.vishay.com
+                                                                                                                                           Vishay Semiconductors
+TAPE AND REEL PACKAGING
+Dimensions in millimeters
+
+
+                                                                                                                                                        1.50 ± 0.1
+
+                                                                             ESD sticker                                2.00 ± 0.05        4.00 ± 0.1
+                                                                                                                                                                1.75 ± 0.1
+
+
+                                                                             Tape slot
+                                                                             in core                                                                                          5.50
+         330                                                                                                                                                                 ± 0.05
+        (13")                                                                                              7.33          2   1
+                                                                                                           ± 0.1         3   4
+                                                                                                                                                                                      + 0.3
+                                                                                                                                                                             12.00 - 0.1
+
+                                                                             Regular, special
+                                                                                                                                      8°                                1.50 ± 0.25
+                                                                             or bar code label                                             8.00 ± 0.1
+
+                                                                                             17999         2.66 ± 0.1                                      4.72 ± 0.1
+                                                                                                                                                                                 22646
+
+                          Fig. 10 - Tape and Reel Shipping Medium                                                                 Fig. 11 - Tape Dimensions
+                   (EIA-481, revision A, and IEC 60286), 2000 units per reel
+
+
+SOLDER PROFILES                                                                                            HANDLING AND STORAGE CONDITIONS
+                                                  Axis Title                                               ESD level: HBM class 2
+                     300                                                               10000
+                                                                                                           Floor life: unlimited
+                                                                     Max. 260 °C
+                     250        255 °C                                                                     Conditions: Tamb < 30 °C, RH < 60 %
+                                                                            245 °C
+                                240 °C
+                                217 °C
+                                                                                                           Moisture sensitivity level 1, according to J-STD-020
+
+   2nd line
+                     200                                                               1000
+                                                               Max. 30 s
+                                                                                                1st line
+                     150
+                                                                                                2nd line
+Temperature (°C)
+                                         Max. 120 s            Max. 100 s
+                     100                                                               100
+                                                        Max. ramp down 6 °C/s
+
+                      50        Max. ramp up 3 °C/s
+
+
+                       0                                                               10
+                            0       50      100       150      200     250       300
+19841                                             Time (s)
+
+                           Fig. 12 - Lead (Pb)-free Reflow Solder Profile
+                            According to J-STD-020 for SMD Devices
+
+
+
+
+Rev. 1.9, 08-Aug-2023                                                       6                              Document Number: 83469
+                                           For technical questions, contact: optocoupleranswers@vishay.com
+                   THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                                  ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                       Legal Disclaimer Notice
+                 www.vishay.com
+                                                                                                                             Vishay
+                                                         Disclaimer
+
+ALL PRODUCT, PRODUCT SPECIFICATIONS AND DATA ARE SUBJECT TO CHANGE WITHOUT NOTICE TO IMPROVE
+RELIABILITY, FUNCTION OR DESIGN OR OTHERWISE.
+
+Vishay Intertechnology, Inc., its affiliates, agents, and employees, and all persons acting on its or their behalf (collectively,
+“Vishay”), disclaim any and all liability for any errors, inaccuracies or incompleteness contained in any datasheet or in any other
+disclosure relating to any product.
+
+Vishay makes no warranty, representation or guarantee regarding the suitability of the products for any particular purpose or
+the continuing production of any product. To the maximum extent permitted by applicable law, Vishay disclaims (i) any and all
+liability arising out of the application or use of any product, (ii) any and all liability, including without limitation special,
+consequential or incidental damages, and (iii) any and all implied warranties, including warranties of fitness for particular
+purpose, non-infringement and merchantability.
+
+Statements regarding the suitability of products for certain types of applications are based on Vishay's knowledge of typical
+requirements that are often placed on Vishay products in generic applications. Such statements are not binding statements
+about the suitability of products for a particular application. It is the customer's responsibility to validate that a particular product
+with the properties described in the product specification is suitable for use in a particular application. Parameters provided in
+datasheets and / or specifications may vary in different applications and performance may vary over time. All operating
+parameters, including typical parameters, must be validated for each customer application by the customer's technical experts.
+Product specifications do not expand or otherwise modify Vishay's terms and conditions of purchase, including but not limited
+to the warranty expressed therein.
+
+Hyperlinks included in this datasheet may direct users to third-party websites. These links are provided as a convenience and
+for informational purposes only. Inclusion of these hyperlinks does not constitute an endorsement or an approval by Vishay of
+any of the products, services or opinions of the corporation, organization or individual associated with the third-party website.
+Vishay disclaims any and all liability and bears no responsibility for the accuracy, legality or content of the third-party website
+or for that of subsequent links.
+
+Vishay products are not designed for use in life-saving or life-sustaining applications or any application in which the failure of
+the Vishay product could result in personal injury or death unless specifically qualified in writing by Vishay. Customers using or
+selling Vishay products not expressly indicated for use in such applications do so at their own risk. Please contact authorized
+Vishay personnel to obtain written terms and conditions regarding products designed for such applications.
+
+No license, express or implied, by estoppel or otherwise, to any intellectual property rights is granted by this document or by
+any conduct of Vishay. Product names and markings noted herein may be trademarks of their respective owners.
+
+
+
+
+© 2026 VISHAY INTERTECHNOLOGY, INC. ALL RIGHTS RESERVED
+
+Revision: 01-Jan-2026                                              1                                           Document Number: 91000
+
+     THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                    ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+

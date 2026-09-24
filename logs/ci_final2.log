@@ -1,0 +1,54 @@
+== run: 12 test(s), ngspice ngspice-45 ==
+TC10_failsafe                PASS
+TC11_worstcase               PASS
+TC12_hot_start               PASS
+TC1_power_on                 PASS
+TC2_rds25                    PASS
+TC2b_rds100                  PASS
+TC3_dc_pos                   PASS
+TC4_dc_neg                   PASS
+TC5_overload                 PASS
+TC6_acoff                    PASS
+TC7b_autoreset               PASS
+TC9_soa                      FAIL
+
+== per-criterion detail ==
+test                     metric                 op     threshold    value        result
+TC10_failsafe            vgs_before             >=     7            8.36047      PASS
+TC10_failsafe            vgs_after              <=     0.5          2.68691E-10  PASS
+TC11_worstcase           rds_key                abs<=  0.020        0.00619228   PASS
+TC11_worstcase           vgs_x                  >=     7            7.76438      PASS
+TC12_hot_start           vgs_max                <=     0.5          0.0143163    PASS
+TC12_hot_start           vlatch                 >=     2.5          4.999989     PASS
+TC1_power_on             vpin6_off              >=     5            10.53926     PASS
+TC1_power_on             vpin6_off              <=     45           10.53926     PASS
+TC1_power_on             vpin6_on               <=     1            0.3247010    PASS
+TC1_power_on             iled                   >=     0.010        0.01082337   PASS
+TC1_power_on             iled                   <=     0.015        0.01082337   PASS
+TC1_power_on             vgs                    >=     7            8.36187      PASS
+TC1_power_on             vsout                  abs<=  0.05         -1.135206E-17 PASS
+TC2_rds25                rds_key                abs<=  0.020        -0.00519797  PASS
+TC2b_rds100              rds_key                abs<=  0.020        -0.00589248  PASS
+TC3_dc_pos               t_delay                <=     1.0          0.176212     PASS
+TC3_dc_pos               vn2_post               >=     0.62         0.9348463    PASS
+TC3_dc_pos               t_off                  <=     0.002        0.00000177110 PASS
+TC3_dc_pos               vflt_end               >=     2.5          5.000000     PASS
+TC3_dc_pos               vlatch_end             >=     2.5          4.999989     PASS
+TC4_dc_neg               t_delay                <=     1.0          0.0328796    PASS
+TC4_dc_neg               vn2_post               <=     -0.17        -0.9348465   PASS
+TC4_dc_neg               t_off                  <=     0.002        3.91748E-7   PASS
+TC4_dc_neg               vflt_end               >=     2.5          5.000000     PASS
+TC4_dc_neg               vlatch_end             >=     2.5          4.999989     PASS
+TC5_overload             vovl                   abs>=  0.67         0.6703178    PASS
+TC5_overload             vgs_off                <=     0.5          0.00000130870 PASS
+TC5_overload             vlatch                 >=     2.5          2.501090     PASS
+TC6_acoff                vac4_before            >=     0.74         6.313823     PASS
+TC6_acoff                t_off                  <=     0.1          0.00000103004 PASS
+TC7b_autoreset           vgs_fault              <=     0.5          8.76245E-7   PASS
+TC7b_autoreset           vgs_after              >=     7            8.36187      PASS
+TC9_soa                  ikey0                  abs>=  20           —          FAIL
+TC9_soa                  t_off                  <=     0.002        —          FAIL
+
+RESULT: FAIL (11 passed, 1 failed of 12)
+  - TC9_soa: ngspice error output:  Reference value :  1.00000e-07 Reference value :  4.94336e-01 Reference value :  9.95146e-01 Reference value :  1.49626e+00 Reference value :  1.99582e+00 Reference value :  2.49658e+00 Reference value :  2.99930e+00 Reference value :  3.50060e+00 Reference value :  4.00058e+00 Reference value :  4.49740e+00 Reference value :  4.99541e+00doAnalyses: TRAN:  Timestep too small; time = 5.27074, timestep = 1.25e-17: trouble with node "led_a3"; ngspice exit code 1; acceptance criteria not met
+results: /tmp/ssr-prot/work/uPC1237_SSR/tests/results.json

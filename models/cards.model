@@ -1,0 +1,56 @@
+* ============================================================================
+* cards.model - VDMOS cards for the uPC1237_SSR solid-state speaker switch
+* Target simulator: LTspice IV (card syntax), cross-checked in ngspice-45.
+*
+* MAIN   : IAUC120N06S5N015  (Infineon, 60 V, PG-TDSON-8/SuperSO8)
+* BACKUP : SUM50020EL         (Vishay,   60 V, TO-263/D2PAK)
+*
+* NOTE on Ron vs Rd/Rs:
+*   - LTspice IV documents Vds/Ron/Qg/mfg as GUI annotations that
+*     "do not directly impact the electrical behavior in simulation"
+*     (lthelp.txt:4611-4630, section VDMOS).
+*   - ngspice-45 silently ignores Ron= as well (tooling.md sec. 2/3).
+*   - The real series resistance is therefore implemented by Rd=/Rs=;
+*     Ron= is kept (a) as the LTspice GUI annotation and (b) as the
+*     nominal total, per the project requirement to duplicate it.
+*
+* Parameter provenance (every number has a source):
+*   MAIN  IAUC120N06S5N015 (iauc.txt):
+*     Vds=60      iauc.txt:139
+*     Vto=2.8     iauc.txt:142  (Vgs(th) 2.2/2.8/3.4 V, typ 2.8)
+*     Ciss 5348p / Crss 56p   iauc.txt:175,179
+*       -> Cgs = Ciss - Crss = 5292p ~ 5.3n
+*       -> Cgdmin = Crss(typ) = 56p
+*     Coss(0V) ~ 4.0n, Crss(0V) ~ 1.0n   graph 10, render/iauc_p08.png
+*       -> Cgdmax = 1n ; Cjo = Coss(0) - Cgdmax = 3.0n
+*     Qg=73.7n    iauc.txt:196
+*     Rg=1.6      iauc.txt:158
+*     Rds(on) max @Vgs=7V,25C = 1.90m  iauc.txt:154
+*       -> Ron(100C) = 1.90m * 1.4 = 2.66m ~ 2.7m  (x1.3..1.7 rule, see
+*          models/MOSFET_CHOICE.md sec. 3; graph render/iauc_p07.png)
+*     Kp=200      model fit (channel 1/(Kp*(Vgs-Vto)) ~ 1.0m at Vgs=7.8)
+*       -> Rd=Rs=(2.7m-1.0m)/2 = 0.85m
+*     ngspice check: Rds(on)=2.7021e-03 ohm at Vgs=7.8 V, Vds=20 mV.
+*
+*   BACKUP SUM50020EL (sum50020el.txt):
+*     Vds=60      sum50020el.txt:35
+*     Vto=2.0     sum_spice.txt (Vishay SPICE model, Doc. 78124: VGS(th)=2 V)
+*     Ciss 11113p / Crss 475p  sum50020el.txt:93,95
+*       -> Cgs = 11113p - 475p = 10638p ~ 10.6n ; Cgdmin = 475p
+*     Coss(0V) ~ 3.4n, Crss(0V) ~ 1.9n   graph, render/sum_p03.png
+*       -> Cgdmax = 1.9n ; Cjo = 3.4n - 1.9n = 1.5n
+*     Qg=126n     sum50020el.txt:96
+*     Rg=1.6      sum50020el.txt:99
+*     gfs=145 S @30 A  sum50020el.txt:91
+*       -> Kp = gfs^2/(4*Id) = 175
+*     Rds(on) ~2.2m max @Vgs=7.8V,25C (interp. 4.5V/10V specs)
+*       -> Ron(100C) = 2.2m * 1.4 = 3.08m ~ 3.0m
+*       -> Rd=Rs=(3.0m-1.0m)/2 = 1.0m
+*     ngspice check: Rds(on)=2.9864e-03 ohm at Vgs=7.8 V, Vds=20 mV.
+* ============================================================================
+
+.model M_SSR     VDMOS(Ron=2.7m Rd=0.85m Rs=0.85m Kp=200  Vto=2.8 Cgs=5.3n  Cgdmax=1n   Cgdmin=56p  Cjo=3n   Rg=1.6 Qg=73.7n mfg=Infineon Vds=60)
+.model M_SSR_BKP VDMOS(Ron=3.0m Rd=1.0m  Rs=1.0m  Kp=175  Vto=2.0 Cgs=10.6n Cgdmax=1.9n Cgdmin=475p Cjo=1.5n Rg=1.6 Qg=126n  mfg=Vishay   Vds=60)
+
+* Optional non-conservative (25 C) variant of the main device:
+*   .model M_SSR_25C VDMOS(Ron=1.9m Rd=0.45m Rs=0.45m Kp=200 Vto=2.8 Cgs=5.3n Cgdmax=1n Cgdmin=56p Cjo=3n Rg=1.6 Qg=73.7n mfg=Infineon Vds=60)

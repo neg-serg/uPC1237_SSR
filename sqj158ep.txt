@@ -1,0 +1,762 @@
+                                                                                                                        SQJ158EP
+                    www.vishay.com
+                                                                                                                      Vishay Siliconix
+                   Automotive N-Channel 60 V (D-S) 175 °C MOSFET
+                                                                           FEATURES
+                     PowerPAK® SO-8L Single
+                                                                           • TrenchFET® power MOSFET
+                                                                           • AEC-Q101 qualified
+                                                                           • 100 % Rg and UIS tested
+                                                D
+                                                                           • Material categorization: 
+                                                                     1       for definitions of compliance please see
+    6.                                                           2   S       www.vishay.com/doc?99912
+      15                                                         S
+           m                                                 3
+            m                          m
+                                      m                4     S
+                                  3
+                              5.1                                                                               D
+                     1                                 G
+                Top View                    Bottom View
+
+
+
+  PRODUCT SUMMARY
+  VDS (V)                                            60
+                                                                                                    G
+  RDS(on) () at VGS = 10 V                         0.0330
+  RDS(on) () at VGS = 4.5 V                        0.0365
+  ID (A)                                             23                                   N-Channel MOSFET
+  Configuration                                     Single                                                        S
+  Package                                   PowerPAK SO-8L
+
+
+
+  ABSOLUTE MAXIMUM RATINGS (TC = 25 °C, unless otherwise noted)
+  PARAMETER                                                                  SYMBOL                     LIMIT                  UNIT
+  Drain-Source Voltage                                                          VDS                      60
+                                                                                                                                 V
+  Gate-Source Voltage                                                           VGS                     ± 20
+                                                             TC = 25 °C                                  23
+  Continuous Drain Current                                                       ID
+                                                             TC = 125 °C                                 13
+  Continuous Source Current (Diode Conduction) a                                  IS                     30                      A
+  Pulsed Drain Current b                                                         IDM                     80
+  Single Pulse Avalanche Current                                                 IAS                     16
+                                                             L = 0.1 mH
+  Single Pulse Avalanche Energy                                                 EAS                     12.8                    mJ
+                                                             TC = 25 °C                                  45
+  Maximum Power Dissipation b                                                    PD                                              W
+                                                             TC = 125 °C                                 15
+  Operating Junction and Storage Temperature Range                             TJ, Tstg             -55 to +175
+                                                                                                                                °C
+  Soldering Recommendations (Peak Temperature) d, e                                                     260
+
+
+
+  THERMAL RESISTANCE RATINGS
+  PARAMETER                                                                   SYMBOL                    LIMIT                  UNIT
+  Junction-to-Ambient                                        PCB Mount c        RthJA                    70
+                                                                                                                               °C/W
+  Junction-to-Case (Drain)                                                      RthJC                    3.3
+Notes
+a. Package limited.
+b. Pulse test; pulse width  300 μs, duty cycle  2 %.
+c. When mounted on 1" square PCB (FR4 material).
+d. See solder profile (www.vishay.com/doc?73257). The PowerPAK SO-8L is a leadless package. The end of the lead terminal is exposed
+   copper (not plated) as a result of the singulation process in manufacturing. A solder fillet at the exposed copper tip cannot be guaranteed
+   and is not required to ensure adequate bottom side solder interconnection.
+e. Rework conditions: manual soldering with a soldering iron is not recommended for leadless components.
+
+
+
+
+S16-1945-Rev. A, 26-Sep-16                                        1                              Document Number: 75249
+                                 For technical questions, contact: automostechsupport@vishay.com
+         THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                        ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                                          SQJ158EP
+                     www.vishay.com
+                                                                                                                                    Vishay Siliconix
+
+    SPECIFICATIONS (TC = 25 °C, unless otherwise noted)
+    PARAMETER                                          SYMBOL                       TEST CONDITIONS                         MIN.       TYP.      MAX.      UNIT
+    Static
+    Drain-Source Breakdown Voltage                        VDS                       VGS = 0, ID = 250 μA                     60          -          -
+                                                                                                                                                              V
+    Gate-Source Threshold Voltage                        VGS(th)                  VDS = VGS, ID = 250 μA                     1.5        2.0       2.5
+    Gate-Source Leakage                                   IGSS                    VDS = 0 V, VGS = ± 20 V                     -          -       ± 100       nA
+                                                                          VGS = 0 V                VDS = 60 V                 -          -          1
+    Zero Gate Voltage Drain Current                       IDSS            VGS = 0 V        VDS = 60 V, TJ = 125 °C            -          -         50        μA
+                                                                          VGS = 0 V        VDS = 60 V, TJ = 175 °C            -          -        250
+    On-State Drain Current a                              ID(on)         VGS = 10 V                 VDS  5 V                15          -          -         A
+                                                                         VGS = 10 V                  ID = 7 A                 -       0.0272    0.0330
+                                                                         VGS = 4.5 V                 ID = 5 A                 -       0.0302    0.0365
+    Drain-Source On-State Resistance a                   RDS(on)                                                                                              
+                                                                         VGS = 10 V          ID = 7 A, TJ = 125 °C            -          -      0.0623
+                                                                         VGS = 10 V          ID = 7 A, TJ = 175 °C            -          -      0.0800
+    Forward Transconductance b                             gfs                      VDS = 15 V, ID = 7 A                      -         36          -         S
+    Dynamic b
+    Input Capacitance                                     Ciss                                                                -        810       1100
+    Output Capacitance                                    Coss            VGS = 0 V         VDS = 25 V, f = 1 MHz             -         90        120        pF
+    Reverse Transfer Capacitance                          Crss                                                                -         40         60
+    Total Gate Charge c                                    Qg                                                                 -         17         30
+    Gate-Source Charge c                                  Qgs            VGS = 10 V          VDS = 30 V, ID = 1.5 A           -         2.5         -        nC
+    Gate-Drain Charge c                                   Qgd                                                                 -         3.6         -
+    Gate Resistance                                        Rg                             f = 1 MHz                           1         2.1       3.1         
+    Turn-On Delay Time c                                  td(on)                                                              -         10         20
+    Rise Time c                                             tr                     VDD = 30 V, RL = 20                       -          5         10
+                                                                                                                                                             ns
+    Turn-Off Delay Time c                                 td(off)            ID  1.5 A, VGEN = 10 V, Rg = 1                 -         22         40
+    Fall Time c                                             tf                                                                -          5         10
+    Source-Drain Diode Ratings and Characteristics b
+    Pulsed Current a                                       ISM                                                                -          -         80         A
+    Forward Voltage                                       VSD                          IF = 7 A, VGS = 0                      -        0.83       1.2         V
+    Body diode reverse recovery time                        trr                                                               -         25         50        ns
+    Body diode reverse recovery charge                     Qrr                                                                -         25         50        nC
+                                                                                 IF = 5 A, di/dt = 100 A/μs
+    Reverse recovery fall time                              ta                                                                -         19          -
+                                                                                                                                                             ns
+    Reverse recovery rise time                              tb                                                                -          6          -
+    Body diode peak reverse recovery current            IRM(REC)                                                              -         -2         -4         A
+Notes
+a. Pulse test; pulse width  300 μs, duty cycle  2 %.
+b. Guaranteed by design, not subject to production testing.
+c. Independent of operating temperature.
+
+
+
+
+Stresses beyond those listed under “Absolute Maximum Ratings” may cause permanent damage to the device. These are stress ratings only, and functional operation
+of the device at these or any other conditions beyond those indicated in the operational sections of the specifications is not implied. Exposure to absolute maximum
+rating conditions for extended periods may affect device reliability.
+
+
+
+
+S16-1945-Rev. A, 26-Sep-16                                       2                              Document Number: 75249
+                                For technical questions, contact: automostechsupport@vishay.com
+        THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                       ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                                                                                                     SQJ158EP
+                                        www.vishay.com
+                                                                                                                                                                                               Vishay Siliconix
+TYPICAL CHARACTERISTICS (TA = 25 °C, unless otherwise noted)
+
+                                                       Axis Title                                                                                                               Axis Title
+                               50                                                           10000                                                   45                                                                 10000
+                                              VGS = 10 V thru 4 V
+                               40                                                                                                                   36
+
+
+        2nd line                                                                                                       2nd line
+                                                                                            1000                                                                                                                       1000
+                               30                                                                                                                   27
+                                                                                                    1st line                                                                                                                   1st line
+                                                                                                                                                             TC = 25 °C
+                                                                                                    2nd line                                                                                                                   2nd line
+ ID - Drain Current (A)
+                                                                                                                                                                                    TC = 125 °C
+
+                                                                                                                ID - Drain Current (A)
+                                                                       VGS = 3 V
+                               20                                                                                                                   18
+                                                                                            100                                                                                                                        100
+
+                               10                                                                                                                    9
+                                                                                                                                                                            TC = -55 °C
+
+                                0                                                           10                                                       0                                                                 10
+                                    0    2            4           6           8      10                                                                  0          2           4          6           8          10
+                                        VDS - Drain-to-Source Voltage (V)                                                                                         VGS - Gate-to-Source Voltage (V)
+                                                     2nd line                                                                                                                  2nd line
+
+                                           Output Characteristics                                                                                                   Transfer Characteristics
+
+
+                                                       Axis Title                                                                                                                Axis Title
+                              100                                                           10000                                                 0.10                                                                 10000
+
+
+
+
+          2nd line
+                               80                                                                                                                 0.08
+
+
+                                                                                                                          2nd line
+                                                                         TC = -55 °C
+                                         TC = 25 °C
+                                                                                            1000                                                                                                                       1000
+                               60                                                                                                                 0.06
+                                                                                                    1st line                                                                                                                   1st line
+
+
+
+gfs - Transconductance (S)
+                                                                                                    2nd line                                                                                        VGS = 4.5 V                2nd line
+
+                                                                                                               RDS(on) - On-Resistance (Ω)
+                               40                                                                                                                 0.04
+                                                                                            100                                                                                                                        100
+                                                                       TC = 125 °C
+                               20                                                                                                                 0.02                                    VGS = 10 V
+
+
+                                0                                                           10                                                    0.00                                                                 10
+                                    0    6            12          18      24         30                                                                  0          8          16         24         32           40
+                                                ID - Drain Current (A)                                                                                                     ID - Drain Current (A)
+                                                       2nd line                                                                                                                   2nd line
+
+                                               Transconductance                                                                                                On-Resistance vs. Drain Current
+
+
+                                                       Axis Title                                                                                                                Axis Title
+                             1000                                                           10000                                                   10                                                                 10000
+
+
+
+
+                                                                                                                            2nd line
+                                                                       Ciss                                                                                   ID = 1.5 A
+                              800                                                                                                                    8        VDS = 30 V
+
+
+
+      2nd line
+                                                                                            1000                                                                                                                       1000
+                              600                                                                                                                    6
+                                                                                                    1st line                                                                                                                   1st line
+                                                                                                    2nd line                                                                                                                   2nd line
+
+
+                                                                                                               VGS - Gate-to-Source Voltage (V)
+C - Capacitance (pF)
+                              400                                                                                                                    4
+                                              Crss                                          100                                                                                                                        100
+
+                              200                                                                                                                    2
+                                                           Coss
+
+
+                                0                                                           10                                                       0                                                                 10
+                                    0    12           24          36          48       60                                                                0          5          10         15         20           25
+                                        VDS - Drain-to-Source Voltage (V)                                                                                            Qg - Total Gate Charge (nC)
+                                                     2nd line                                                                                                                   2nd line
+
+                                                     Capacitance                                                                                                              Gate Charge
+
+
+
+
+S16-1945-Rev. A, 26-Sep-16                                                            3                              Document Number: 75249
+                                                     For technical questions, contact: automostechsupport@vishay.com
+                             THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                                            ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                                                                                                                                                               SQJ158EP
+                                                        www.vishay.com
+                                                                                                                                                                                                                                                         Vishay Siliconix
+TYPICAL CHARACTERISTICS (TA = 25 °C, unless otherwise noted)
+
+                                                                       Axis Title                                                                                                                                                          Axis Title
+                                        2.5                                                                                                10000                                                       100                                                                      10000
+
+
+
+
+               2nd line
+                                                   ID = 6 A                                     VGS = 10 V
+                                        2.1                                                                                                                                                             10
+
+
+                                                                                                                                                                                    2nd line
+                                                                                                                                                                                                                           TJ = 150 °C
+                                                                                                                                           1000                                                                                                                                 1000
+                                        1.7                                                                                                                                                              1
+                                                                                                                        VGS = 4.5 V                 1st line                                                                                                                            1st line
+                                                                                                                                                    2nd line                                                                                                                            2nd line
+
+                                                                                                                                                                            IS - Source Current (A)
+
+RDS(on) - On-Resistance (Normalized)
+                                        1.3                                                                                                                                                             0.1
+                                                                                                                                           100                                                                                                      TJ = 25 °C                  100
+
+                                        0.9                                                                                                                                                            0.01
+
+
+                                        0.5                                                                                                10                                                         0.001                                                                     10
+                                              -50 -25         0   25       50   75 100 125 150 175                                                                                                            0      0.2        0.4           0.6       0.8      1.0      1.2
+                                                          TJ - Junction Temperature (°C)                                                                                                                                VSD - Source-to-Drain Voltage (V)
+                                                                      2nd line                                                                                                                                                      2nd line
+
+                                              On-Resistance vs. Junction Temperature                                                                                                                              Source Drain Diode Forward Voltage
+
+
+                                                                       Axis Title                                                                                                                                                          Axis Title
+                                       0.15                                                                                                10000                                                        0.5                                                                     10000
+
+
+
+
+           2nd line
+                                       0.12                                                                                                                                                             0.2
+
+
+                                                                                                                                                                                  2nd line
+                                                                                                                                           1000                                                                                                                                 1000
+                                       0.09                                                                                                                                                            -0.1
+                                                                                                                                                    1st line                                                                                                                            1st line
+                                                                                                                                                                                                                                                              ID = 5 mA
+                                                                                                                                                    2nd line                                                                                                                            2nd line
+                                                                                                                                                                            VGS(th) Variance (V)
+RDS(on) - On-Resistance (Ω)
+                                                                                               TJ = 150 °C
+                                       0.06                                                                                                                                                            -0.4
+                                                                                                                                           100                                                                                                                                  100
+
+                                       0.03                                                                                                                                                            -0.7
+                                                                            TJ = 25 °C                                                                                                                                                                  ID = 250 μA
+
+                                       0.00                                                                                                10                                                          -1.0                                                                     10
+                                               0          2            4          6                                       8           10                                                                      -50 -25      0    25         50    75 100 125 150 175
+                                                        VGS - Gate-to-Source Voltage (V)                                                                                                                                       TJ - Temperature (°C)
+                                                                     2nd line                                                                                                                                                         2nd line
+
+                                              On-Resistance vs. Gate-to-Source Voltage                                                                                                                                         Threshold Voltage
+
+
+                                                                                                                                                               Axis Title
+                                                                                                                           90                                                                                        10000
+
+
+
+
+                                                                                                 2nd line
+                                                                                                                           85         ID = 1 mA
+
+                                                                                                                                                                                                                     1000
+                                                                                                                           80
+                                                                                                                                                                                                                                1st line
+                                                                                                                                                                                                                                2nd line
+
+
+                                                                                    VDS - Drain-to-Source Voltage (V)
+                                                                                                                           75
+                                                                                                                                                                                                                     100
+
+                                                                                                                           70
+
+
+                                                                                                                           65                                                                                        10
+                                                                                                                                -50 -25         0   25         50    75 100 125 150 175
+                                                                                                                                            TJ - Junction Temperature (°C)
+                                                                                                                                                        2nd line
+
+                                                                                                                        Drain Source Breakdown vs. Junction Temperature
+
+
+
+
+S16-1945-Rev. A, 26-Sep-16                                                                      4                              Document Number: 75249
+                                                               For technical questions, contact: automostechsupport@vishay.com
+                                       THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                                                      ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                                                                                                           SQJ158EP
+                                                www.vishay.com
+                                                                                                                                                                                                    Vishay Siliconix
+THERMAL RATINGS (TA = 25 °C, unless otherwise noted)
+
+                                                                                                                                  Axis Title
+                                                                                                1000                                                                 10000
+                                                                                                                            IDM limited
+
+                                                                                                 100
+
+
+                                                                              2nd line
+                                                                                                                                                               100 μs
+                                                                                                                                                                  1000
+                                                                                                  10
+                                                                                                                                                                              1st line
+                                                                                                                                                               1 ms
+                                                                                                                                                                              2nd line
+                                                                       ID - Drain Current (A)
+                                                                                                   1                                                           10 ms
+                                                                                                                                                               100100
+                                                                                                                                                                   ms, 1 s, 10 s, DC
+                                                                                                                  Limited by RDS(on)   (1)
+
+                                                                                                 0.1
+                                                                                                          TC = 25 °C
+                                                                                                                                               BVDSS limited
+                                                                                                         Single pulse
+                                                                                                0.01                                                                 10
+                                                                                                    0.01              0.1              1             10        100
+                                                                                                                   VDS - Drain-to-Source Voltage (V)
+                                                                                                       (1) V
+                                                                                                               GS > minimum VGS at which RDS(on) is specified
+
+
+                                                                                                                       Safe Operating Area
+
+
+
+
+                                            1
+
+
+
+         Normalized Effective Transient
+                                                   Duty cycle = 0.5
+
+
+                                                   0.2                                                                                                               Notes:
+
+                                                   0.1                                                                                                                PDM
+
+
+
+
+             Thermal Impedance
+                                          0.1
+                                                   0.05                                                                                                                        t1
+                                                                                                                                                                                  t2
+                                                                                                                                                                                            t1
+                                                                                                                                                                     1. Duty cycle, D =
+                                                   0.02                                                                                                                                     t2
+                                                                                                                                                                     2. Per unit base = R thJA = 70 °C/W
+                                                                                  Single pulse                                                                       3. TJM - TA = PDMZthJA(t)
+                                                                                                                                                                     4. Surface nounted
+                                   0.01
+                                      0.0001                0.001                                 0.01                      0.1                  1               10                       100              1000
+                                                                                                                    Square Wave Pulse Duration (s)
+
+
+                                                                      Normalized Thermal Transient Impedance, Junction-to-Ambient
+
+
+
+
+S16-1945-Rev. A, 26-Sep-16                                    5                              Document Number: 75249
+                             For technical questions, contact: automostechsupport@vishay.com
+     THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                    ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                                     SQJ158EP
+                                               www.vishay.com
+                                                                                                                                 Vishay Siliconix
+THERMAL RATINGS (TA = 25 °C, unless otherwise noted)
+
+                                                                                               Axis Title
+                                                                                                                                             10000
+
+                                          1
+
+
+
+
+       Normalized Effective Transient
+                                                Duty cycle = 0.5
+
+                                                                                                                                             1000
+                                                0.2
+
+
+                                                                                                                                                     1st line
+
+
+
+           Thermal Impedance
+                                         0.1    0.1
+
+                                                                                                                                             100
+                                                               0.05
+                                                          0.02
+                                                Single pulse
+                                        0.01                                                                                                 10
+                                           0.0001                        0.001                   0.01                  0.1               1
+                                                                                     Square Wave Pulse Duration (s)
+                                                                                               2nd line
+
+                                                                      Normalized Thermal Transient Impedance, Junction-to-Case
+Note
+• The characteristics shown in the two graphs
+  - Normalized Transient Thermal Impedance Junction-to-Ambient (25 °C)
+  - Normalized Transient Thermal Impedance Junction-to-Case (25 °C)
+  are given for general guidelines only to enable the user to get a “ball park” indication of part capabilities. The data are extracted from single
+  pulse transient thermal impedance characteristics which are developed from empirical measurements. The latter is valid for the part
+  mounted on printed circuit board - FR4, size 1" x 1" x 0.062", double sided with 2 oz. copper, 100 % on both sides. The part capabilities
+  can widely vary depending on actual application parameters and operating conditions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vishay Siliconix maintains worldwide manufacturing capability. Products may be manufactured at one of several qualified locations. Reliability data for Silicon
+Technology and Package Reliability represent a composite of all qualified locations. For related documents such as package/tape drawings, part marking, and
+reliability data, see www.vishay.com/ppg?75249.
+
+S16-1945-Rev. A, 26-Sep-16                                     6                              Document Number: 75249
+                              For technical questions, contact: automostechsupport@vishay.com
+      THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                     ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                       Package Information
+                www.vishay.com
+                                                                                                                           Vishay Siliconix
+                                     PowerPAK® SO-8L Case Outline 2
+
+                                b2
+
+                                                                                             W1
+
+
+
+                                                                                   W3   W2
+
+                                                                                                                                  E2
+
+                                                  E1
+                                                       E
+
+                                                                         W
+
+                                                                                                                D2
+                                                                             A1
+
+
+                                                  L1                          L1
+                                                                         L
+
+               b           b1                 e                         θ                         b4
+                                                                                         b3
+                                D1                              0.25 gauge line                        Backside view (single)
+                                D
+
+                    Topside view (single)
+
+                                b2
+                                                                                                                 K                F
+
+                                                                                             W1
+
+
+
+                                                                                   W3   W2
+
+                                                                                                                                  E2
+
+                                                  E1       E3
+                                                       E
+                                                                                                       D3                D3
+
+
+                                                                                                                D2
+
+
+
+
+                                                  L1
+
+
+               b           b1                 e                                                   b4
+                                                                                         b3
+                                D1                                                                     Backside view (dual)
+                                D
+
+                        Topside view (dual)
+
+
+
+                                                       A
+                                                   C
+
+
+
+
+Revision: 25-Sep-2023                                        1                               Document Number: 66934
+                              For technical questions, contact: pmostechsupport@vishay.com
+     THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                    ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                Package Information
+                  www.vishay.com
+                                                                                              Vishay Siliconix
+
+                                    MILLIMETERS                                        INCHES
+        DIM.
+                            MIN.        NOM.            MAX.            MIN.            NOM.            MAX.
+          A                 1.00        1.07             1.14           0.039           0.042           0.045
+         A1                 0.00          -             0.127            0.00             -             0.005
+          b                 0.33        0.41             0.48           0.013           0.016           0.019
+          b1                0.44        0.51             0.58           0.017           0.020           0.023
+          b2                4.80        4.90             5.00           0.189           0.193           0.197
+          b3                            0.094                                           0.004
+          b4                            0.47                                            0.019
+          c                 0.20        0.25             0.30           0.008           0.010           0.012
+          D                 5.00        5.13             5.25           0.197           0.202           0.207
+         D1                 4.80        4.90             5.00           0.189           0.193           0.197
+         D2                 3.86        3.96             4.06           0.152           0.156           0.160
+         D3                 1.63        1.73             1.83           0.064           0.068           0.072
+          e                           1.27 BSC                                        0.050 BSC
+          E                 6.05        6.15             6.25           0.238           0.242           0.246
+         E1                 4.27        4.37             4.47           0.168           0.172           0.176
+         E2                 2.75        2.85             2.95           0.108           0.112           0.116
+         E3                 6.05        6.22             6.40           0.238           0.245           0.252
+          F                  -            -              0.15             -               -             0.006
+          L                 0.62        0.72             0.82           0.024           0.028           0.032
+          L1                0.92        1.07             1.22           0.036           0.042           0.048
+          K                             0.51                                            0.020
+          W                             0.23                                            0.009
+         W1                             0.41                                            0.016
+         W2                             2.82                                            0.111
+         W3                             2.96                                            0.117
+                            0°           -              10°              0°              -              10°
+ECN: C23-1026-Rev. D, 25-Sep-2023
+DWG: 6044
+
+Note
+• Millimeters will govern
+
+
+
+
+Revision: 25-Sep-2023                                        2                               Document Number: 66934
+                              For technical questions, contact: pmostechsupport@vishay.com
+     THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                    ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                                                     PAD Pattern
+                 www.vishay.com
+                                                                                                                     Vishay Siliconix
+RECOMMENDED MINIMUM PAD FOR PowerPAK® SO-8L SINGLE
+
+
+
+                                                                          5.000
+                                                                         (0.197)
+
+
+
+
+                                                               4.061                            0.510
+                                                              (0.160)                          (0.020)
+                                               3.630                                                        2.310
+                                              (0.143)
+                                                                                                           (0.091)
+
+                                                          0.595
+                                                         (0.023)
+                           8.250     6.250
+                                                                                                           0.610
+                          (0.325)   (0.246)                                                               (0.024)
+                                                                                                 0.710
+                                                                                                (0.028)
+
+                                                                    2.715
+                                                                   (0.107)                                  1.291
+                                                0.410                                         0.860
+                                                                                                           (0.051)
+                                               (0.016)                                       (0.034)
+
+                                                                                                    0.820
+                                                                                                   (0.032)
+
+
+                                                               1.905                1.270
+                                                              (0.075)              (0.050)
+
+
+                                                                          7.250
+                                                                         (0.285)
+
+                                                           Recommended Minimum Pads
+                                                            Dimensions in mm (inches)
+
+
+
+
+Revision: 07-Feb-12                                                     1                                            Document Number: 63818
+
+     THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                    ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                       Legal Disclaimer Notice
+                 www.vishay.com
+                                                                                                                             Vishay
+                                                         Disclaimer
+
+ALL PRODUCT, PRODUCT SPECIFICATIONS AND DATA ARE SUBJECT TO CHANGE WITHOUT NOTICE TO IMPROVE
+RELIABILITY, FUNCTION OR DESIGN OR OTHERWISE.
+
+Vishay Intertechnology, Inc., its affiliates, agents, and employees, and all persons acting on its or their behalf (collectively,
+“Vishay”), disclaim any and all liability for any errors, inaccuracies or incompleteness contained in any datasheet or in any other
+disclosure relating to any product.
+
+Vishay makes no warranty, representation or guarantee regarding the suitability of the products for any particular purpose or
+the continuing production of any product. To the maximum extent permitted by applicable law, Vishay disclaims (i) any and all
+liability arising out of the application or use of any product, (ii) any and all liability, including without limitation special,
+consequential or incidental damages, and (iii) any and all implied warranties, including warranties of fitness for particular
+purpose, non-infringement and merchantability.
+
+Statements regarding the suitability of products for certain types of applications are based on Vishay's knowledge of typical
+requirements that are often placed on Vishay products in generic applications. Such statements are not binding statements
+about the suitability of products for a particular application. It is the customer's responsibility to validate that a particular product
+with the properties described in the product specification is suitable for use in a particular application. Parameters provided in
+datasheets and / or specifications may vary in different applications and performance may vary over time. All operating
+parameters, including typical parameters, must be validated for each customer application by the customer's technical experts.
+Product specifications do not expand or otherwise modify Vishay's terms and conditions of purchase, including but not limited
+to the warranty expressed therein.
+
+Hyperlinks included in this datasheet may direct users to third-party websites. These links are provided as a convenience and
+for informational purposes only. Inclusion of these hyperlinks does not constitute an endorsement or an approval by Vishay of
+any of the products, services or opinions of the corporation, organization or individual associated with the third-party website.
+Vishay disclaims any and all liability and bears no responsibility for the accuracy, legality or content of the third-party website
+or for that of subsequent links.
+
+Vishay products are not designed for use in life-saving or life-sustaining applications or any application in which the failure of
+the Vishay product could result in personal injury or death unless specifically qualified in writing by Vishay. Customers using or
+selling Vishay products not expressly indicated for use in such applications do so at their own risk. Please contact authorized
+Vishay personnel to obtain written terms and conditions regarding products designed for such applications.
+
+No license, express or implied, by estoppel or otherwise, to any intellectual property rights is granted by this document or by
+any conduct of Vishay. Product names and markings noted herein may be trademarks of their respective owners.
+
+
+
+
+© 2026 VISHAY INTERTECHNOLOGY, INC. ALL RIGHTS RESERVED
+
+Revision: 01-Jan-2026                                              1                                           Document Number: 91000
+
+     THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                    ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+

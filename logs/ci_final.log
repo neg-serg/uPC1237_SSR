@@ -1,0 +1,59 @@
+== run: 12 test(s), ngspice ngspice-45 ==
+TC10_failsafe                PASS
+TC11_worstcase               FAIL
+TC12_hot_start               PASS
+TC1_power_on                 FAIL
+TC2_rds25                    FAIL
+TC2b_rds100                  FAIL
+TC3_dc_pos                   FAIL
+TC4_dc_neg                   FAIL
+TC5_overload                 PASS
+TC6_acoff                    PASS
+TC7b_autoreset               PASS
+TC9_soa                      PASS
+
+== per-criterion detail ==
+test                     metric                 op     threshold    value        result
+TC10_failsafe            vgs_before             >=     7            8.35625      PASS
+TC10_failsafe            vgs_after              <=     0.5          2.68429E-10  PASS
+TC11_worstcase           rds_key                abs<=  0.020        1.29744E+8   FAIL
+TC11_worstcase           vgs_x                  >=     7            -1.00885E-7  FAIL
+TC12_hot_start           vgs_max                <=     0.5          0.0143163    PASS
+TC12_hot_start           vlatch                 >=     2.5          4.999989     PASS
+TC1_power_on             vpin6_off              >=     5            10.53926     PASS
+TC1_power_on             vpin6_off              <=     45           10.53926     PASS
+TC1_power_on             vpin6_on               <=     1            0.2939495    PASS
+TC1_power_on             iled                   >=     0.010        0.009798318  FAIL
+TC1_power_on             iled                   <=     0.015        0.009798318  PASS
+TC1_power_on             vgs                    >=     7            8.35766      PASS
+TC1_power_on             vsout                  abs<=  0.05         -7.095326E-18 PASS
+TC2_rds25                rds_key                abs<=  0.020        -7.02170E+7  FAIL
+TC2b_rds100              rds_key                abs<=  0.020        -3.66638E+8  FAIL
+TC3_dc_pos               t_det                  <=     1.0          5.17621      FAIL
+TC3_dc_pos               vn2_post               >=     0.62         0.9348463    PASS
+TC3_dc_pos               t_off                  <=     0.002        0.00000177066 PASS
+TC3_dc_pos               vflt_end               >=     2.5          5.000000     PASS
+TC3_dc_pos               vlatch_end             >=     2.5          4.999989     PASS
+TC4_dc_neg               t_det                  <=     1.0          5.03288      FAIL
+TC4_dc_neg               vn2_post               <=     -0.17        -0.9348465   PASS
+TC4_dc_neg               t_off                  <=     0.002        3.98305E-7   PASS
+TC4_dc_neg               vflt_end               >=     2.5          5.000000     PASS
+TC4_dc_neg               vlatch_end             >=     2.5          4.999989     PASS
+TC5_overload             vovl                   abs>=  0.67         0.6702880    PASS
+TC5_overload             vgs_off                <=     0.5          0.00000121960 PASS
+TC5_overload             vlatch                 >=     2.5          2.500858     PASS
+TC6_acoff                vac4_before            >=     0.74         6.313823     PASS
+TC6_acoff                t_off                  <=     0.1          0.00000103256 PASS
+TC7b_autoreset           vgs_fault              <=     0.5          8.67807E-7   PASS
+TC7b_autoreset           vgs_after              >=     7            8.35766      PASS
+TC9_soa                  ikey0                  abs>=  20           20.70268     PASS
+TC9_soa                  t_off                  <=     0.002        8.12546E-7   PASS
+
+RESULT: FAIL (6 passed, 6 failed of 12)
+  - TC11_worstcase: acceptance criteria not met
+  - TC1_power_on: acceptance criteria not met
+  - TC2_rds25: acceptance criteria not met
+  - TC2b_rds100: acceptance criteria not met
+  - TC3_dc_pos: acceptance criteria not met
+  - TC4_dc_neg: acceptance criteria not met
+results: /tmp/ssr-prot/work/uPC1237_SSR/tests/results.json

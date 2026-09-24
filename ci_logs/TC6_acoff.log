@@ -1,0 +1,36 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: * upc1237_ssr.cir — защита АС: upc1237 + vom1271 + 2x n-mosfet (встречно, общие истоки)
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Operating point simulation skipped by 'uic',
+  now using transient initial conditions.
+ Reference value :  2.00000e-07 Reference value :  8.76227e-01 Reference value :  1.75505e+00 Reference value :  2.63487e+00 Reference value :  3.51065e+00 Reference value :  4.38500e+00 Reference value :  5.24815e+00 Reference value :  6.12341e+00 Reference value :  6.99911e+00 Reference value :  7.87725e+00
+No. of Data Rows : 400183
+
+  Measurements for Transient Analysis
+
+vac4_before         =  6.313823e+00
+t_acloss            =   5.07075e+00
+t_out               =   5.07075e+00
+t_off               =  8.86332e-07
+
+
+Total analysis time (seconds) = 2.28891
+
+Total elapsed time (seconds) = 2.292 
+
+Total DRAM available = 61942.242 MB.
+DRAM currently available = 11674.469 MB.
+Maximum ngspice program size =   33.367 MB.
+Current ngspice program size =   19.391 MB.
+
+Shared ngspice pages =    8.102 MB.
+Text (code) pages =    6.512 MB.
+Stack = 0 bytes.
+Library pages =   11.238 MB.
+

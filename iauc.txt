@@ -1,0 +1,397 @@
+ 英飞凌汽车级 MOSFET
+
+ 英飞凌汽车级 60V 175°C N 沟道增强型 OptiMOS™ 5 功率晶体管
+
+
+
+
+ 特性
+ • 适用于汽车应用的功率 MOSFET
+ • N 沟道 – 增强型 – 标准电平
+ • 严苛于 AEC-Q101 的扩展认证
+ • 加强电气测试
+ • 坚固的设计
+ • MSL1 回流焊峰值温度高达 260°C
+ • 工作温度 175°C
+ • 绿色产品：符合 RoHS 标准
+ • 100% 雪崩测试
+
+ 潜在应用
+ 通用汽车应用
+
+ 产品验证
+ 汽车应用认证。根据 AEC-Q101 进行产品验证。
+
+
+ 产品概述
+                                60     V
+
+                               1.50    mΩ
+
+                               230     A
+
+
+
+
+                                                                                          5N06N015
+
+
+
+
+本数据手册的原文使用英文撰写。为方便起见，英飞凌提供了译文；由于翻译过程中可能使用了自动化工具，英飞凌不保证译文的准确性。 为确认准确性，
+请务必访问 infineon.com 参考最新的英文版本（控制文档）。
+
+ Data Sheet             Please read the sections "Important notice" and "Warnings" at the end of this document    Rev. 1.01
+ www.infineon.com/mosfets                                                                                        2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+
+
+
+目录
+
+
+   描述 ........................................................................................................................................................................ 1
+
+
+   最大额定值 .................................................................................................................................................... 3
+
+
+   热特性 ............................................................................................................................................................ 4
+
+
+   电气特性 ........................................................................................................................................................ 4
+
+
+   电气特性图 .................................................................................................................................................... 6
+
+
+   封装外形和尺寸 .......................................................................................................................................... 10
+
+
+   修订记录 ...................................................................................................................................................... 11
+
+
+   免责声明 ............................................................................................................................................................. 12
+
+
+
+
+Data Sheet                                                                           2                                                                            Rev. 1.01
+                                                                                                                                                                 2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+
+
+
+最大额定值
+
+Tj=25 °C，除非另有规定
+
+Parameter                             Symbol                  Conditions               Value        Unit
+
+
+Continuous drain current              ID           V GS=10 V, Chip limitation1,2)        230        A
+
+
+                                                   V GS=10V, DC current3)                120
+
+                                                   T a=85 °C, V GS=10 V, R thJA on
+                                                   2s2p2,4)                              30
+
+Pulsed drain current2)                I D,pulse    T C=25 °C, t p= 100 µs                757
+Avalanche energy, single pulse2)      E AS         I D=60 A                              345        mJ
+Avalanche current, single pulse       I AS         –                                     120        A
+Gate source voltage                   V GS         –                                     ±20        V
+Power dissipation                     P tot        T C=25 °C                             167        W
+Operating and storage temperature     T j, T stg   –                                 -55 ... +175   °C
+IEC climatic category; DIN IEC 68-1   –            –                                 55/175/56
+
+
+
+
+Data Sheet                                                    3                                             Rev. 1.01
+                                                                                                           2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+
+
+热特性 2)
+Parameter                             Symbol                  Conditions                  Values          Unit
+                                                                                   min.    typ.    max.
+Thermal resistance, junction - case   R thJC      –                                 –       –      0.90   K/W
+Thermal resistance,
+                                      R thJA      –                                 –      23.3     –
+junction - ambient4)
+
+
+
+
+电气特性
+Tj=25 °C，除非另有规定
+
+Parameter                             Symbol                  Conditions                  Values          Unit
+                                                                                   min.    typ.    max.
+
+静态参数特性
+
+                                                  V GS=0 V,
+Drain-source breakdown voltage        V (BR)DSS                                     60      –       –     V
+                                                  I D=1 mA
+
+Gate threshold voltage                V GS(th)    V DS=V GS, I D=94 µA             2.2     2.8      3.4
+
+
+Zero gate voltage drain current       I DSS       V DS=60 V, V GS=0 V, T j=25 °C    –       –       1     µA
+
+
+                                                  V DS=60 V, V GS=0 V,
+                                                                                    –       –      100
+                                                  T j=125 °C2)
+
+Gate-source leakage current           I GSS       V GS=20 V, V DS=0 V               –       –      100    nA
+
+Drain-source on-state resistance      RDS(on)     V GS=7 V, I D=30 A                –      1.60    1.90   mΩ
+
+                                                  V GS=10 V, I D=60 A               –      1.30    1.50
+
+Gate resistance2)                     RG          –                                 –      1.6      –     Ω
+
+
+
+
+Data Sheet                                                4                                                      Rev. 1.01
+                                                                                                                2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+
+
+
+Parameter                           Symbol                  Conditions                   Values          Unit
+                                                                                  min.    typ.    max.
+
+动态参数特性 2)
+
+Input capacitance                   C iss                                          –      5348    6952   pF
+
+Output capacitance                  C oss       V GS=0 V, V DS=30 V, f =1 MHz      –      1160    1507
+
+Reverse transfer capacitance        Crss                                           –       56      84
+
+Turn-on delay time                  t d(on)                                        –       13      –     ns
+
+Rise time                           tr          V DD=30 V, V GS=10 V, I D=60 A,    –       7       –
+
+Turn-off delay time                 t d(off)    R G,ext=3.5 Ω                      –       27      –
+
+Fall time                           tf                                             –       17      –
+
+
+
+栅极电荷特性 2)
+Gate to source charge               Q gs                                           –       24      31    nC
+
+Gate to drain charge                Q gd        V DD=30 V, I D=60 A,               –      13.7     21
+
+Gate charge total                   Qg          V GS=0 to 10 V                     –      73.7     96
+
+Gate plateau voltage                V plateau                                      –      4.5      –     V
+
+
+
+体内寄生反向二极管
+
+Diode continous forward current2)   IS          T C=25 °C                          –       –      120    A
+
+Diode pulse current2)               I S,pulse   T C=25 °C, t p= 100 µs             –       –      757
+
+
+Diode forward voltage               V SD        V GS=0 V, I F=60 A, T j=25 °C      –      0.8     1.1    V
+
+
+Reverse recovery time2)             t rr        V R=30 V, I F=50A,                 –       49      –     ns
+
+                                    Q rr        di F/dt =100 A/µs                  –       49      –     nC
+Reverse recovery charge2)
+1）
+     实际上，电流能力受到包括客户特定的印刷电路板在内的整体系统设计的限制。
+
+2）
+     该参数不受制于生产测试 – 由设计标定。
+
+3)
+     电流受封装限制。
+
+4）
+     器件放置于根据 JEDEC 标准（JESD51-5, -7）定义的 2s2p FR4 印刷电路板上。印刷电路板垂直放置在静止空气中。
+
+
+
+
+Data Sheet                                              5                                                      Rev. 1.01
+                                                                                                              2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+
+电气特性图
+1 功率耗散                                2 漏极电流
+
+
+
+
+3 安全工作区                               4 最大瞬态热阻抗
+
+
+
+
+Data Sheet                        6                 Rev. 1.01
+                                                  2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+
+
+5 典型输出特性                              6 典型漏源导通电阻
+
+
+
+
+7 典型转移特性                              8 典型漏源导通电阻
+
+
+
+
+Data Sheet                        7                  Rev. 1.01
+                                                   2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+9 典型栅极阈值电压                            10 典型电容值
+
+
+
+
+11 典型二极管正向导通特性                        12 典型雪崩特性
+
+
+
+
+Data Sheet                        8                 Rev. 1.01
+                                                  2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+13 典型雪崩能量                             14 漏源击穿电压
+
+
+
+
+15 典型栅极电荷                             16 栅极充电波形
+
+
+
+
+Data Sheet                        9                 Rev. 1.01
+                                                  2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+封装外形
+
+
+
+
+                                      Insert image
+
+
+
+
+封装尺寸
+
+
+
+
+                                      Insert image
+
+
+
+
+包装信息
+
+
+                                  Insert image
+
+
+
+
+Data Sheet                       10                   Rev. 1.01
+                                                     2025-02-13
+OptiMOS™ 5 Automotive Power MOSFET, 60 V
+IAUC120N06S5N015
+
+
+修订记录
+
+Revision                            Date       Changes
+
+Revision 1.0                      2024-04-11   Final Data Sheet
+
+Revision 1.01                     2025-02-13   Typo on page 1 corrected
+
+
+
+
+Data Sheet                          11                                      Rev. 1.01
+                                                                          2025-02-13
+         免责声明
+请注意，本文件的原文使用英文撰写，为方便客户浏览英飞凌提供了中文译文。该中文译文仅供参考，并不可作为任何论点之依
+据。
+由于翻译过程中可能使用了自动化程序，以及语言翻译和转换过程中的差异，最后的中文译文与最新的英文版本原文含义可能存
+在不尽相同之处。
+因此，我们同时提供该中文译文版本的最新英文原文供您阅读，请参见 http://www.infineon.com
+英文原文和中文译文版本之间若存有任何歧异，以最新的英文版本为准，并且仅认可英文版本为正式文件。
+您如果使用本文件，即表示您同意并理解上述说明。英飞凌不对因翻译过程中可能存在的任何不完整或不准确信息而产生的任
+何直接或间接损失或损害负责。英飞凌不承担中文译文版本的完整性和准确性责任。如果您不同意上述说明，请不要使用本文
+件。
+
+
+
+
+Trademarks
+All referenced product or service names and trademarks are the property of their respective owners.
+
+
+
+
+                                              重要通知
+                                              Infineon Technologies AG 及其关联公司（以下简                     英飞凌明确保留根据适用法律，如《德国版权
+版本 2026-03-30                                 称 "英飞凌"）销售或提供和交付的产品（可能也                                 法》（UrhG）第 44b 条，将其内容用于商业资料
+                                              包括样品，且可能由硬件或软件或两者组成）                                    和数据探勘（TDM）的权利。
+Infineon Technologies AG 出版，                  （以下简称 "产品"），应遵守客户与英飞凌签订
+                                              的框架供应合同或其他书面协议的条款和条件，                                   如果产品包含安全功能：
+德国 Neubiberg 85579
+                                              如无上述合同或其他书面协议，则应遵守适用的                                   由于任何计算设备都不可能绝对安全，尽管产品
+                                              英飞凌销售条件。只有在英飞凌明确书面同意的                                   采取了安全措施，但英飞凌不保证产品不会被入
+                                              情况下，客户的一般条款和条件或对适用的英飞                                   侵、数据不会被盗或遗失，或不会发生其他漏洞
+版权 © 2026 Infineon Technologies AG
+                                              凌销售条件的偏离才对英飞凌具有约束力。                                     （以下简称"安全漏洞"），英飞凌对任何安全漏
+及其关联公司。
+                                                                                                      洞不承担任何责任。
+保留所有权利。                                       为避免疑义，英飞凌不承担不侵犯第三方权利的
+                                              所有保证和默示保证，例如对特定用途/目的的适                                  如果本文档包含或引用软件：
+                                              用性或适销性的保证。                                              根据美国、德国和世界其他国家的知识产权法律
+Do you have a question about this                                                                     和条约，该软件归英飞凌所有。英飞凌保留所有
+document?                                     英飞凌对与样品、应用或客户对任何产品的具体                                   权利。因此，您只能按照软件附带的软件授权协
+                                              使用有关的任何信息或本文档中给出的任何示例                                   议的规定使用本软件。
+Email:                                        或典型值概不负责。
+erratum@infineon.com                                                                                  如果没有适用的软件授权协议，英飞凌特此授予
+                                              本文件中包含的数据仅供具有技术资格和技能的                                   您个人的、非排他性的、不可转让的软件知识产
+                                              客户代表使用。客户有责任评估产品对预期应用                                   权授权（无权转授权）：(a) 对于以源代码形式提
+                                              和客户特定用途的适用性，并在预期应用和客户                                   供的软件，仅在贵组织内部修改和复制该软件用
+                                              特定用途中验证本文件中包含的所有相关技术数                                   于 英 飞 凌 硬 件 产 品 ； 及 (b) 对 于 以 二 进 制 代 码
+                                              据。客户有责任正确设计、编程和测试预期应用                                   (binary code)形式对外向终端用户分发该软件，
+                                              的功能性和安全性，并遵守与其使用相关的法律                                   仅得用于英飞凌硬件产品。禁止对本软件进行任
+                                              要求。                                                     何其他使用、复制、修改、翻译或编译。有关产
+                                                                                                      品、技术、交货条款和条件以及价格的详细信
+                                              除非英飞凌另行明确批准，否则产品不得用于任                                   息，请联系离您最近的英飞凌办公室或访问
+                                              何因产品故障或使用产品的任何后果可合理预期                                   https://www.infineon.com。
+                                              会导致人身伤害的应用。但是，上述规定并不妨
+                                              碍客户在英飞凌明确设计和销售的使用领域中使
+                                              用任何产品，但是客户对应用负有全部责任。
+

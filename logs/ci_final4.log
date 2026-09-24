@@ -1,0 +1,66 @@
+== run: 15 test(s), ngspice ngspice-45 ==
+TC10_failsafe                PASS
+TC11_worstcase               PASS
+TC12_hot_start               PASS
+TC1_power_on                 PASS
+TC2_rds25                    PASS
+TC2b_rds100                  PASS
+TC3_dc_pos                   PASS
+TC4_dc_neg                   PASS
+TC5_overload                 PASS
+TC6_acoff                    PASS
+TC7a_latch                   PASS
+TC7b_autoreset               PASS
+TC8_signal8                  PASS
+TC8b_signal4                 PASS
+TC9_soa                      PASS
+
+== per-criterion detail ==
+test                     metric                 op     threshold    value        result
+TC10_failsafe            vgs_before             >=     7            8.36133      PASS
+TC10_failsafe            vgs_after              <=     0.5          2.68707E-11  PASS
+TC11_worstcase           rds_key                abs<=  0.020        0.00619238   PASS
+TC11_worstcase           vgs_x                  >=     7            7.76420      PASS
+TC12_hot_start           vgs_max                <=     0.5          0.0143320    PASS
+TC12_hot_start           vlatch                 >=     2.5          4.999989     PASS
+TC1_power_on             vpin6_off              >=     5            10.67328     PASS
+TC1_power_on             vpin6_off              <=     45           10.67328     PASS
+TC1_power_on             vpin6_on               <=     1            0.3315609    PASS
+TC1_power_on             iled                   >=     0.010        0.01105203   PASS
+TC1_power_on             iled                   <=     0.015        0.01105203   PASS
+TC1_power_on             vgs                    >=     7            8.36269      PASS
+TC1_power_on             vsout                  abs<=  0.05         5.607555E-18 PASS
+TC2_rds25                rds_key                abs<=  0.020        -0.00519771  PASS
+TC2b_rds100              rds_key                abs<=  0.020        -0.00589256  PASS
+TC3_dc_pos               t_delay                <=     1.0          0.176212     PASS
+TC3_dc_pos               vn2_post               >=     0.62         0.9348463    PASS
+TC3_dc_pos               t_off                  <=     0.002        0.00000171627 PASS
+TC3_dc_pos               vflt_end               >=     2.5          5.000000     PASS
+TC3_dc_pos               vlatch_end             >=     2.5          4.999989     PASS
+TC4_dc_neg               t_delay                <=     1.0          0.0328798    PASS
+TC4_dc_neg               vn2_post               <=     -0.17        -0.9348465   PASS
+TC4_dc_neg               t_off                  <=     0.002        5.14600E-7   PASS
+TC4_dc_neg               vflt_end               >=     2.5          5.000000     PASS
+TC4_dc_neg               vlatch_end             >=     2.5          4.999989     PASS
+TC5_overload             vovl                   abs>=  0.67         0.6706453    PASS
+TC5_overload             vgs_off                <=     0.5          9.85596E-9   PASS
+TC5_overload             vlatch                 >=     2.5          2.505213     PASS
+TC6_acoff                vac4_before            >=     0.74         6.313823     PASS
+TC6_acoff                t_off                  <=     0.1          8.86000E-7   PASS
+TC7a_latch               vgs_fault              <=     0.5          0.08391516   PASS
+TC7a_latch               vgs_after              <=     0.5          -1.087835    PASS
+TC7a_latch               vlatch_after           >=     2.5          4.517333     PASS
+TC7b_autoreset           vgs_fault              <=     0.5          6.75571E-14  PASS
+TC7b_autoreset           vgs_after              >=     7            8.36269      PASS
+TC8_signal8              loss_db                abs<=  0.05         -0.00564145  PASS
+TC8_signal8              rds_dyn                abs<=  0.02         0.00519728   PASS
+TC8_signal8              vzc                    abs<=  0.01         0.000002546675 PASS
+TC8b_signal4             loss_db                abs<=  0.05         -0.0112793   PASS
+TC8b_signal4             rds_dyn                abs<=  0.02         0.00519748   PASS
+TC8b_signal4             vzc                    abs<=  0.01         0.000001045728 PASS
+TC9_soa                  ikey0                  abs>=  20           20.70269     PASS
+TC9_soa                  t_off                  <=     0.002        5.83816E-7   PASS
+TC9_soa                  e_int                  <=     0.01         0.003954608  PASS
+
+RESULT: PASS (15/15)
+results: /tmp/ssr-prot/work/uPC1237_SSR/tests/results.json

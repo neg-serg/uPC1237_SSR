@@ -1,0 +1,116 @@
+# ОПРЕДЕЛЕНИЯ (фиксированы, менять только с обновлением отчёта):
+#  t_off   = время от срабатывания детектора (VLATCH/VFLT) до спада V(GATE1) ниже Vto=2.8 В.
+#            Измеряется для худшего случая (TC3, положительный DC). С активным разрядом (OPT1) ~1.8 мкс.
+#  Rds(on) = |V(SPK)-V(AMP_OUT)| / |I(VIOUT)|, измеряется в TC2/TC2b/TC11 (не по карте модели).
+#  ТЕСТ-ХУК: в TC2/TC2b/TC11 масштаб внешнего детектора перегрузки BOVL изменён с /5 на /50
+#            (детектор выведен из игры, чтобы измерить Rds при 10 А; сам детектор проверяется в TC5).
+#  TC2b не является валидацией 100 C: температурный коэффициент ngspice VDMOS (x1.14) слабее
+#            паспортного (x1.3..1.7) — инженерная оценка по даташиту: <=3.23 мОм/прибор.
+# tests/criteria.tsv — acceptance criteria for the uPC1237_SSR ngspice test suite.
+#
+# Format (4 required columns, ';'-separated; optional 5th column = unit/comment):
+#   <test> ; <metric> ; <operator> ; <threshold> [ ; <unit/comment> ]
+#
+#   <test>      test name = tests/<test>.cir without extension (exact match)
+#   <metric>    name of a `.meas` scalar as printed by ngspice ("name = 1.2e-05").
+#               Several accepted aliases may be listed separated by '|'; the first
+#               alias present in the ngspice output is used.
+#   <operator>  one of: >= <= > < == !=   (optionally prefixed with `abs`, e.g. abs<=)
+#   <threshold> a plain number (integer / decimal / scientific)
+#
+# Thresholds come from SPEC.md: R1/R4/R5/R7/R9/R11, R12, and test cases TC1..TC12.
+# Rules enforced by run_tests.sh: every test needs >=1 rule here; every metric must
+# be present in the ngspice output; a test also FAILs on non-zero exit, any
+# `Error:`, or any non-benign ngspice warning (e.g. "unrecognized parameter").
+#
+# ngspice .meas returns SI units: time in seconds, current in amperes.
+
+# ---- TC1 power-on: off before T_ON, on after (R7, R4, R3) ------------------
+TC1_power_on ; vpin6_off ; >=    ; 5       ; V, PIN6 open (LED off) before T_ON
+TC1_power_on ; vpin6_off ; <=    ; 45      ; V, R5 limit on PIN6 in off state
+TC1_power_on ; vpin6_on  ; <=    ; 1       ; V, PIN6 saturated (LED on)
+TC1_power_on ; iled      ; >=    ; 0.010   ; A, VOM1271 IF 10..15 mA
+TC1_power_on ; iled      ; <=    ; 0.015   ; A
+TC1_power_on ; vgs       ; >=    ; 7       ; V, V(GATE,CS)
+TC1_power_on ; vsout     ; abs<= ; 0.05    ; V, SPK near 0 with key closed
+
+# ---- TC2 Rds(on) at 25 C / 100 C, 10 A, sum of both devices (R1) -----------
+TC2_rds25   ; rds_key ; abs<= ; 0.020 ; ohm, total two devices at 25 C
+TC2b_rds100 ; rds_key ; abs<= ; 0.020 ; ohm, total two devices at 100 C
+
+# ---- TC3 DC offset +2 V (R7) ----------------------------------------------
+TC3_dc_pos ; t_delay    ; <= ; 1.0  ; s, T_DC (R7: время детекции DC <= 1 с, определение: от прихода DC до VFLT=2.5 В)
+TC3_dc_pos ; vn2_post   ; >= ; 0.62  ; V, positive DC threshold reached
+TC3_dc_pos ; t_off      ; <= ; 0.002 ; s, key turn-off (R11 <=2 ms)
+TC3_dc_pos ; vflt_end   ; >= ; 2.5   ; V, fault flag set
+TC3_dc_pos ; vlatch_end ; >= ; 2.5   ; V, fault latched
+
+# ---- TC4 DC offset -2 V (R7) ----------------------------------------------
+TC4_dc_neg ; t_delay    ; <= ; 1.0  ; s, T_DC (отрицательная полярность)
+TC4_dc_neg ; vn2_post   ; <= ; -0.17 ; V, negative DC threshold reached
+TC4_dc_neg ; t_off      ; <= ; 0.002 ; s, key turn-off (R11 <=2 ms)
+TC4_dc_neg ; vflt_end   ; >= ; 2.5   ; V, fault flag set
+TC4_dc_neg ; vlatch_end ; >= ; 2.5   ; V, fault latched
+
+# ---- TC5 overload on pin 1 (R1 detection, SPEC threshold 0.67 V) ----------
+TC5_overload ; vovl    ; abs>= ; 0.67 ; V, overload detector threshold
+TC5_overload ; vgs_off ; <=    ; 0.5  ; V, key closed after trip
+TC5_overload ; vlatch  ; >=    ; 2.5  ; V, fault latched
+
+# ---- TC6 AC-OFF (R9, disconnect <= 100 ms) --------------------------------
+TC6_acoff ; vac4_before ; >= ; 0.74 ; V, AC present before loss
+TC6_acoff ; t_off       ; <= ; 0.1  ; s, AC loss -> gate off <= 100 ms
+
+# ---- TC7b auto-reset (latch cap replaced by 10k) --------------------------
+TC7b_autoreset ; vgs_fault ; <= ; 0.5 ; V, key closed while fault present
+TC7b_autoreset ; vgs_after ; >= ; 7   ; V, key re-enabled after fault clears
+
+# ---- TC7a latch (R8): после снятия аварии ключ остаётся закрытым до снятия питания ----
+TC7a_latch ; vgs_fault     ; <= ; 0.5 ; V, key closed during fault
+TC7a_latch ; vgs_after     ; <= ; 0.5 ; V, LATCH: key stays closed after fault clears
+TC7a_latch ; vlatch_after  ; >= ; 2.5 ; V, latch state held
+# ---- TC8 аудиотракт: вносимые потери и отсутствие ступеньки на zero-crossing ----
+TC8_signal8 ; loss_db  ; abs<= ; 0.05 ; dB, вносимые потери ключа (2xRds к 8 Ом)
+TC8_signal8 ; rds_dyn  ; abs<= ; 0.02 ; Ом, динамическое сопротивление ключа под сигналом
+TC8_signal8 ; vzc      ; abs<= ; 0.01 ; В, остаток на переходе через нуль (нет ступеньки)
+TC8b_signal4 ; loss_db ; abs<= ; 0.05 ; dB, то же для 4 Ом (15 Впик: ток < порога перегрузки 5 А)
+TC8b_signal4 ; rds_dyn ; abs<= ; 0.02 ; Ом
+TC8b_signal4 ; vzc     ; abs<= ; 0.01 ; В
+# ---- TC13 индуктивная нагрузка (АС = 2.4 Ом + 0.5 мГ): ограничитель выброса OPT2 ----
+TC13a_ind_load ; vsw_pk  ; abs<= ; 60 ; В, пик напряжения на ключе при размыкании (рейтинг 60 В); без OPT2 было 3784 В
+TC13a_ind_load ; t_off   ; <=    ; 0.002 ; s
+TC13b_ind_dead_amp ; vsw_pk ; abs<= ; 60 ; В, то же при «мёртвом» выходном каскаде УМ
+# ---- TC14/TC15/TC16 питание uPC1237 по даташиту (25…60 В) ----
+TC14_vcc60 ; vdly_on ; >= ; 2 ; s, задержка включения при Vcc=60 В
+TC14_vcc60 ; vdly_on ; <= ; 6 ; s
+TC14_vcc60 ; iled    ; >= ; 0.010 ; A
+TC15_vcc25 ; vdly_on ; >= ; 2 ; s, задержка включения при Vcc=25 В
+TC15_vcc25 ; vdly_on ; <= ; 6 ; s
+TC15_vcc25 ; iled    ; >= ; 0.010 ; A
+TC16_dc_trip_vcc60 ; t_delay ; <= ; 1.0 ; s, детекция DC при Vcc=60 В
+TC16_dc_trip_vcc60 ; t_off   ; <= ; 0.002 ; s
+TC16_dc_trip_vcc60 ; vlatch_end ; >= ; 2.5 ; V
+# ---- TC17 реальная АС (Re 6.4 Ом + Le 1 мГ + противоЭДС катушки 40 В) ----
+TC17_speaker_rl_bemf ; vsw_pk  ; abs<= ; 60  ; В, пик на ключе при размыкании (рейтинг 60 В)
+TC17_speaker_rl_bemf ; e_clamp ; <=    ; 0.5 ; Дж, энергия, поглощённая ограничителем (аналитика 1/2*L*I^2 = 13.5 мДж; деталь подбирать >= 0.5 Дж)
+# ---- TC18 целостность блокировки: ограничитель НЕ должен шунтировать ключ ----
+TC18_blocking ; ileak_pos ; abs<= ; 0.001 ; А, утечка закрытого ключа при +50 В
+TC18_blocking ; ileak_neg ; abs<= ; 0.001 ; А, утечка при -50 В (ловит ошибку включения ограничителя «анод-катод-анод»)
+TC18_blocking ; vsw_pos   ; >=    ; 45    ; В, ключ держит +50 В
+TC18_blocking ; vsw_neg   ; >=    ; 45    ; В, ключ держит -50 В
+# ---- TC9 turn-off under fault current, SOA (R11/R12) ----------------------
+TC9_soa ; ikey0 ; abs>= ; 20   ; A, fault current before turn-off
+TC9_soa ; t_off ; <=    ; 0.002 ; s, key turn-off (R11 <=2 ms)
+TC9_soa ; e_int ; <= ; 0.01 ; J, энергия выключения (физический интегратор BINT/CINT; 3.95 мДж после подавления drain-induced turn-on); ср. e_analytic
+
+# ---- TC10 fail-safe: LED branch opens (R3) --------------------------------
+TC10_failsafe ; vgs_before ; >= ; 7   ; V, healthy (key on) before LED opens
+TC10_failsafe ; vgs_after  ; <= ; 0.5 ; V, key closed and stays closed
+
+# ---- TC11 worst case Vgs=7.8 V, 100 C (R1) --------------------------------
+TC11_worstcase ; rds_key ; abs<= ; 0.020 ; ohm, total two devices, worst case
+TC11_worstcase ; vgs_x   ; >=    ; 7     ; V, gate drive present
+
+# ---- TC12 hot start with fault present (R3) -------------------------------
+TC12_hot_start ; vgs_max ; <= ; 0.5 ; V, key never opens during power-up
+TC12_hot_start ; vlatch  ; >= ; 2.5 ; V, fault latched

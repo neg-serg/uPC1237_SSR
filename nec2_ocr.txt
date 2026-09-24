@@ -1,0 +1,460 @@
+BIPOLA
+
+R ANALOG INTEGRATED CIRCUIT
+
+«PC1237
+
+PROTECTOR IC FOR STEREO POWER AMPLIFIER
+
+DESCRIPTION
+
+1PC1237 is a monolithic integrated circuit designed for protecting stereo power amplifiers and loudspeakers,
+
+FEATURES
+
+® Work stably within a wide power supply voltage range. (Vcc= 25 to 60 V)
+® Contain a relay driver. (Max. lg = 80 mA)
+® Work as either latching function or automatic resetting function by using pin 3. (In both overload detection and output
+
+offset detection, either function can be selected.)
+©® Need only single power supply.
+® Both positive and negative output offset can be detected through the same pin. (Output offset detection through pin 2)
+® AC voltage can be detected. (For AC-power-OFF mute through pin 4)
+® The time delay from amplifier power ON to relay ON can be freely set by selecting external components. (For AC-
+
+power-ON mute through pin 7)
+©® The moment that amplifier-power is turned off, it can make relay broken OFF and then loudspeaker disconnected
+
+from amplifier to prevent a shock off noise.
+
+ORDERING INFORMATION
+
+PART NUMBER
+
+PACKAGE
+
+QUALITY GRADE
+
+uPC1237HA
+
+8 PIN PLASTIC SLIM SIP
+
+Standard
+
+Please refer to "“Quality grade on NEC Semiconductor Devices’” (Document number 1E1-1209) published by NEC Corporation
+to know the specification of quality grade on the devices and its recommended applications,
+
+BLOCK DIAGRAM
+
+Flip — flop
+
+Output Offset detector
+
+AC — OFF detector
+
+Switch for latch/automatic — reset
+
+vee
+7} (?)
+A\
+Vce ON %6)
+O Overload detector mute 3
+£
+>
+B
+3
+&
+
+Document No. IC-1806A
+(0.D.No. 1C-7094A)
+
+Date Published October 1991 M
+
+Printed in Japan
+
+G
+
+© NEC Corporation 1986
+ABSOLUTE MAXIMUM RATINGS (T,=25°C)
+
+Power Supply Voltage
+Allowable Power Dissipation
+Operational Temperature
+Storage Temperature
+
+Pin 6 Maximum Current
+
+Pin 4 Maximum Voltage
+
+Pin 8 Maximum Voltage
+
+Pin 1 Maximum Current
+
+Pin 2 Maximum Current
+
+Pin 7 Maximum Voltage
+
+Vee
+Pp
+Topt
+Tstg
+
+lg max
+Va max
+Vg max
+1 max
+12 max
+
+V7 max
+
+RECOMMENDED OPERATING CONDITION
+
+Supply Voltage Vee=25t0 45t0 60 V
+
+60
+320"
+-20 to +75
+-40 to +125
+80
+1
+
+w o 5
+
+I+
+w
+
+*T,=75°C
+
+mW
+
+mA
+mA
+
+ELECTRICAL CHARACTERISTICS (V¢ =45V, T, = 25 °C, State using latching function)
+
+CHARACTERISTIC SYMBOL MIN TYP. MAX. UNIT CONDITION
+Pin 1 Threshold Voltage Vth 1 0.58 067 0.76 \" level to invert at pin 6
+Pin 2 Positive Threshold Voltage Vth+2 0.54 0.62 0.70 Vv level to invert at pin 6
+Pin 2 Negative Threshold Voltage Vth=2 -0.12 -0.17 -0.23 v level to invert at pin 6
+Pin 4 Threshold Voltage Vth 4 0.60 0.74 0.90 v level to invert at pin 6
+Pin 8 Reference Voltage v8 3.0 34 3.8 \ R_=15kQ
+
+TEST CIRCUIT (State using latchung function)
+
+045V
+
+1 swi
+
+1 sw2
+
+Switch positions
+
+24V, 37 mA )
+
+Relay (lntemal resistance 650 Q
+
+Item SW 1 SW2 | sw3
+Vth 1 1 3 2
+Vth+2 2 1 2
+Vth=2 2 2 2
+Vih 4 2 3 1
+v8 2 3 2
+TYPICAL APPLICATION CIRCUIT
+T 1
+|
+T
+1
+H
+(-3
+Terminal for overload detection —l L
+AC100 V 15 k +Vg
+Reh Ra M4 ——
+56 ko 56 ko
++ +
+330 4F 33 4F
+A 2560
+Amplifier set {2) —) i
+#PC1237 ds)—
+(3) (5)
+0.022X_1 (Automatic)
+(Latch) ; ”}7 reset
+NOTE FOR USING uPC1237
+1. FUNCTION FOR OUTPUT OFFSET DETECTION (pin 2)
+
+1) If too much DC current flows through a speaker voice coil due to large output offset DC level, the voice coil might
+be overheated and the speaker might be broken. To prevent the damage, it is necessary to detect the Output Offset
+DC level and to disconnect the speaker from the power amplifier by breaking off a relay if the detected DC level is
+shifted beyond a threshold level. uPC1237 has a function to detect both the positive and the negative Output Offset
+DC level with its single power supply. As shown below, you can easily make the positive and the negative threshold
+level equivalent and also set up their level by choosing proper resistances.
+
+2) How to determine the threshold levels of Output Offset detection. (¥Vth)
+[1] The threshold level of positive output offset detection (+Vth) is given by Eq. (1).
+
+R
+HVth= (24—2) s ViDL Ul
+Re
+
+where Vth+2 is the original positive threshold level of pin 2, and vtht2=0.62 V TYP.
+[2] The threshold level of negative Output Offset detection (- Vth) is given by Eq. (2).
+
+_ Ra
+-Vih=- { - vth 2~(2+R——)+|C2-RA}, ............................................. (2
+Cc
+
+where Vth™ 2 is the original negative threshold level of pin 2, and
+Vth 2=-0.17 V TYP.
+and |2 is the current from uPC1237 and,
+le2 =125 uA TYP.
+at nearly - Vth.
+3) You can easily find how to make £ Vth level equivalent as shown below
+
+R
+(2+-A
+Rc
+
+therefore determine Rp, Rg and R¢ from Eq. (3)
+
+Attention; The original positive and negative threshold level at pin 2 without any resistances are unbalanced; +Vth
+=0.62V TYP.and -Vth=-0.17 V TYP.
+
+Example of design
+
+If you need the output offset threshold level £Vth to be £2.0 V, determine R, Rg and R¢ as shown below.
+
+[1] Substitute 2.0 to +Vth in Eq. (1) and obtain Ra/Rc.
+
+} R
+)+ Vth2=-{-Vth 2-(2+—A)+Ic2'RA}, ...................................... 3)
+Rc
+
+Ra
+20=(2+—) X 0.62
+R Re
+——A-:—‘ 1.226
+Rc
+[2] Substitute -2.0 to - Vth in Eq. (2) and obtain Ra (Rg) and Re.
+-2.0=-0.17 (2 +1.226) - 12.5 (uA) X Ra (k2) (V)
+Ra = 116.1 kQ
+Rc =94.7 kQ
+Therefore, if you need +Vth to be 2.0 volts, choose Rp, Rg and R¢ as shown below.
+Ra = Rg =120 k2 and R¢ = 91 k2
+The lower limits of Rp and Rg are given by the maximum rating (+3 mA) of pin 2 and
+
++V
+€C <43 (mA)
+Ra(B)
+In case of recommended condition, that is RA = Rg = 56 k2 and R¢ =, *Vth can be obtained as shown below.
+Vinz R
+(11 +vth =2+ 288D ) 6 65124 (v) v
+56 (kQ2) 12 Re Rg* (The threshold level of )
+
+[2] -Vth=-0.17 (2 +T) -12.5 (uA) X 56 (k2) =-1.04 (V) Output offset detection.
+
+RA=RB fig. 1
+
+* Rch power amplifier output terminal is usually an imaginally GND
+as seen from Lch power amplifier, so that the equivalent circuit
+can be obtained as shown above.
+2. FUNCTION OF AC LEVEL DETECTION
+
+When you turn off the power switch, it sometimes causes a shock-off noise, therefore it is necessary to break off the
+relay and then to keep the power amplifier apart from loud speaker at the moment that power switch is turned off. In
+other words, the protection circuit is required to have a function to detect that power-off time. However, in fact, it is
+difficult to detect that power-off time from actual DC supply voltage line. Because it cannot be turned 0 V instanta-
+neously due to a large capacitance inserted between the power supply line and GND. In case of uPC1237,it can detect
+this power-off time from AC power supply directly, that is, this is a function to detect AC level.
+
+The AC power supply level (usually 50 Hz or 60 Hz) can be transmitted to pin 4 through a half-wave rectification circuit
+as shown below.
+
+And it works within a wide range of AC level by choosing a proper resistance as R4 (Refer to the characteristic curve
+shown as fig.5 for the choice of R4). If power switch is turned off while the relay is being made ON and the speaker is
+being connected to the power amplifier output, the relay will be broken OFF to disconnect the speaker after a time
+delay (AC OFF mute) according to the discharge time constant determined by the voltage on pin 4, the external
+capacitance C4, and the internal resistance of the IC.
+
+fig. 2
+
+. FUNCTION OF OVERLOAD DETECTION (pin 1)
+The original threshold level of pin 1 is 0.67 V TYP. In case of using a constant-current drive, as the means of detection,
+the threshold current level is 110 uA TYP. When current which is larger than 110 uA flows to the IC, the relay will be
+broken OFF.
+Note; The overload detecting circuit is not included in the IC because of patent problems. Use the external circuit as an overload
+
+detection.
+
+. FUNCTION OF LATCHING AND AUTOMATIC RESETTING (pin 3)
+If the IC detects the abnormal condition such as the larger output offset level or the overload, the IC can make the relay
+broken OFF. And then, two functions can be selected after the condition returns to the normal state. One is that the
+relay is made ON automatically and the other is that it keeps the relay broken off until once the power switch is turned
+off and then is turned on again.
+The former is a function of automatic resetting and the latter is a function of latching. uPC1237 has both functions
+and can be selected either function by using pin 3. In case of latching, connect pin 3 to the ground through the capacitor,
+which is for preventing misoperation. For automatic resetting, connect it to the ground directly. This function is valid
+for both overload detection and output offset detection.
+
+. TIME DELAY FROM POWER AMPLIFIER POWER SWITCH ON TO RELAY ON (power-on mute at pin 7)
+To suppress shock-on noise generated by power ON, a time delay is provided by connecting a circuit with a time
+constant. This time delay is set to make relay ON to connect speakers after enough time for the power amplifier and the
+preamplifier to reach a stable operating condition. The ON mute time is determined as follows,
+
+Vg - V3
+
+T (ON mute) =-C7 * Ry * ¢n ——— |
+
+\£
+where Vg is reference voltage at pin 8, 3.40 volts, TYP. and V7 is threshold level at pin 7, 2.06 volts, TYP.
+Rz
+To pin 8
+
++
+
+C7
+
+fig. 3
+. HOW TO MAKE IT WORK WITHIN A WIDE RANGE OF POWER SUPPLY VOLTAGE (pin 8)
+By choosing a proper resistance Rg connected to pin 8, the IC can work within a wide range of power supply voltage
+Ve from 25 to 60 volts.
+
+In case that pin 8 is directly driven by a regulated power supply, set Vg to 3.40 volts, TYP. As for the choice of Rg
+value, refer to the characteristic curve shown as fig.6.
+
+Rg
+
+e  fig.4
+fig. 5 OPTIMUM VALUE
+OF EXTERNAL RESISTANCE Ry
+
+R4 to VA Characteristic
+
+50
+4
+40
+//
+30,
+/
+
+g /
+2
+
+2
+
+//
+4
+1 /|
+/
+/
+/
+0 10 20 30 40 50 60
+
+VAC —AC Supply Voltage (50 Hz)—Vrm.s.
+
+Example) Use of E-24 series.
+
+Select 24 k2 R4 for 40 volts r.m.s. Vac.
+If no resistance of specified value is available,
+choose a resistance which is as close as possible
+
+to and lower than the value specified by the diagram.
+
+Rg—kQ
+
+fig. 6 OPTIMUM VALUE
+OF EXTERNAL RESISTANCE Rg
+
+Rg to V¢ Characteristic
+
+20|
+>
+1
+4/
+4/
+"
+0
+20 30 40 50 60
+
+Vee — Supply Voltage —V
+
+Rg
+Vee
+
+Example) Use of E-24 series.
+Select 15 k2 Rg for 45 volts Vee.
+If no resistance of specified value is available,
+choose a resistance which is as close as possible
+to and lower than the value specified by the diagram.
+TEMPERATURE CHARACTERISTIC
+
+Vg’ ToN mut, Vth4, Vth+*2, and Vth1 to Ta Characteristics
+
+Vee=45V
+Rg=15 k2
+5{ 401 1.0 Vg
+>
+|
+"4 = — TON MUTE T
+5 >I = Bt N S e g -
+= le |E I e gy R o - B
+z” & Vin]
+30{05
+= . g ~ Vth 2
+1 N ——
+==
+I
+I Vin-2—
+
+-20 0 20 40 60 80
+
+Ta— Ambient Temperature —°C
+8 PIN PLASTIC SLIM SIP
+
+A N
+b3
+¢}
+1 8
+Il | Il
+L[] [T T ¥
+| I |
+>
+Lc N QL
+Z = J U
+Fl&é|G @
+PBHA-254B
+NOTE o ITEM MILLIMETERS INCHES
+Each lead centerline is located within 0.25 mm
+(0.01 inch) of its true position-(T.P.) at maxi- A 2032 MAX. 08 MAX.
+mum material condition. C 1.1 MIN. 0.043 MIN.
+F 0.5 0.02:888
+G 0.25 0.01
+H 254 0.1
+J 1.27 MAX. 0.05 MAX.
+K 0.51 MIN. 0.02 MIN.
+M 5.08 MAX. 0.2 MAX.
+N 282 0.1178888
+Q 5.75 MAX. 0.227 MAX.
+u 1.5 MAX. 0.059 MAX.
+v 0.257888 0.01-888%
+Y 3.270% 0.126°%
+z 1.1 MIN. 0.043 MIN.
+
+[MEMO]
+
+No part of this document may be copied or reproduced in any form or by any means without the prior written
+consent of NEC Corporation. NEC Corporation assumes no responsibility for any errors which may appear in this
+document.
+NEC Corporation does not assume any liability for infringement of patents, copyrights or other intellectual pro-
+perty rights of third parties by or arising from use of a device described herein or any other liability arising from
+use of such device. No license, either express, implied or otherwise, is granted under any patents, copyrights or
+other intellectual property rights of NEC Corporation or others.
+The devices listed in this document are not suitable for use in the field where very high reliability is required
+including, but not limited to, aerospace equipment, submarine cables, nuclear reactor control systems and life
+support systems. If customers intend to use NEC devices for above applications or othose intend to use ““Standard’’
+quality grade NEC devices for the application not intended by NEC, please contact our sales people in advance.
+Application examples recommended by NEC Corporation
+Standard: Data processing and office equipment, Communication equipment (terminal, mobile), Test and
+Measurement equipment, Audio and Video equipment, Other consumer products, Industrial robots,
+etc.
+Special: Automotive and Transportation equipment, Communication equipment (trunk line), Train and
+Traffic control devices, Burning control systems, antidisaster systems, anticrime systems etc.
+

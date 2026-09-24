@@ -1,0 +1,1190 @@
+{
+  "schema": "uPC1237_SSR/ci-results/1",
+  "generated_at": "2026-09-24T12:29:37Z",
+  "root": "/tmp/ssr-prot/work/uPC1237_SSR",
+  "ngspice": "ngspice-45",
+  "command": "nix shell nixpkgs#ngspice -c ngspice -b <test.cir>",
+  "host": "Linux 6.18.44 x86_64",
+  "git_commit": "",
+  "summary": {
+    "total": 22,
+    "passed": 22,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "tests": [
+    {
+      "test": "TC10_failsafe",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC10_failsafe.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC10_failsafe.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.800,
+      "measurements": {
+        "iled_after": 1.068670E-11,
+        "vcs_after": 0.1102680,
+        "vcs_before": 9.170669E-15,
+        "vg_after": 0.1102680,
+        "vg_before": 8.361328,
+        "vgs_after": 3.00461E-11,
+        "vgs_before": 8.36133,
+        "vspk_after": 1.696481E-13
+      },
+      "criteria": [
+        {
+          "metric": "vgs_before",
+          "resolved": "vgs_before",
+          "operator": ">=",
+          "threshold": 7,
+          "value": 8.36133,
+          "raw_value": "8.36133e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, healthy (key on) before LED opens"
+        },
+        {
+          "metric": "vgs_after",
+          "resolved": "vgs_after",
+          "operator": "<=",
+          "threshold": 0.5,
+          "value": 3.00461E-11,
+          "raw_value": "3.00461e-11",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, key closed and stays closed"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC11_worstcase",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC11_worstcase.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC11_worstcase.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 1.228,
+      "measurements": {
+        "ikey": -9.979800,
+        "rds_each": 0.00309619,
+        "rds_key": 0.00619238,
+        "vamp": 0.09979800,
+        "vcs_x": 0.1306540,
+        "vg_x": 7.894855,
+        "vgs_x": 7.76420,
+        "vspk": 0.1615967
+      },
+      "criteria": [
+        {
+          "metric": "rds_key",
+          "resolved": "rds_key",
+          "operator": "abs<=",
+          "threshold": 0.020,
+          "value": 0.00619238,
+          "raw_value": "6.19238e-03",
+          "status": "PASS",
+          "reason": "",
+          "note": "ohm, total two devices, worst case"
+        },
+        {
+          "metric": "vgs_x",
+          "resolved": "vgs_x",
+          "operator": ">=",
+          "threshold": 7,
+          "value": 7.76420,
+          "raw_value": "7.76420e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, gate drive present"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC12_hot_start",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC12_hot_start.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC12_hot_start.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.589,
+      "measurements": {
+        "vcs_min": 0.09983614,
+        "vg_max": 0.1155437,
+        "vgs_max": 0.0157076,
+        "vlatch": 4.999989
+      },
+      "criteria": [
+        {
+          "metric": "vgs_max",
+          "resolved": "vgs_max",
+          "operator": "<=",
+          "threshold": 0.5,
+          "value": 0.0157076,
+          "raw_value": "1.57076e-02",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, key never opens during power-up"
+        },
+        {
+          "metric": "vlatch",
+          "resolved": "vlatch",
+          "operator": ">=",
+          "threshold": 2.5,
+          "value": 4.999989,
+          "raw_value": "4.999989e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, fault latched"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC13a_ind_load",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC13a_ind_load.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC13a_ind_load.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 4.510,
+      "measurements": {
+        "ikey0": 5.190380,
+        "t_det": 5.00043,
+        "t_off": 5.81850E-7,
+        "t_vgs_off": 5.00043,
+        "vsw_late": 50.04033,
+        "vsw_pk": 54.70504,
+        "vsw_pk_t": 54.70504
+      },
+      "criteria": [
+        {
+          "metric": "vsw_pk",
+          "resolved": "vsw_pk",
+          "operator": "abs<=",
+          "threshold": 60,
+          "value": 54.70504,
+          "raw_value": "5.470504e+01 at=  5.000432e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "В, пик напряжения на ключе при размыкании (рейтинг 60 В); без OPT2 было 3784 В"
+        },
+        {
+          "metric": "t_off",
+          "resolved": "t_off",
+          "operator": "<=",
+          "threshold": 0.002,
+          "value": 5.81850E-7,
+          "raw_value": "5.81850e-07",
+          "status": "PASS",
+          "reason": "",
+          "note": "s"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC13b_ind_dead_amp",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC13b_ind_dead_amp.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC13b_ind_dead_amp.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 4.478,
+      "measurements": {
+        "vgs_off": 0.2517684,
+        "vsw_pk": 54.69441
+      },
+      "criteria": [
+        {
+          "metric": "vsw_pk",
+          "resolved": "vsw_pk",
+          "operator": "abs<=",
+          "threshold": 60,
+          "value": 54.69441,
+          "raw_value": "5.469441e+01 at=  5.000431e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "В, то же при «мёртвом» выходном каскаде УМ"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC14_vcc60",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC14_vcc60.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC14_vcc60.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.557,
+      "measurements": {
+        "iled": 0.01105203,
+        "vdly_on": 4.36210,
+        "vgs": 8.362694,
+        "vic": 3.468470,
+        "vlogic": 5.000000
+      },
+      "criteria": [
+        {
+          "metric": "vdly_on",
+          "resolved": "vdly_on",
+          "operator": ">=",
+          "threshold": 2,
+          "value": 4.36210,
+          "raw_value": "4.36210e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "s, задержка включения при Vcc=60 В"
+        },
+        {
+          "metric": "vdly_on",
+          "resolved": "vdly_on",
+          "operator": "<=",
+          "threshold": 6,
+          "value": 4.36210,
+          "raw_value": "4.36210e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "s"
+        },
+        {
+          "metric": "iled",
+          "resolved": "iled",
+          "operator": ">=",
+          "threshold": 0.010,
+          "value": 0.01105203,
+          "raw_value": "1.105203e-02",
+          "status": "PASS",
+          "reason": "",
+          "note": "A"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC15_vcc25",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC15_vcc25.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC15_vcc25.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.540,
+      "measurements": {
+        "iled": 0.01105203,
+        "vdly_on": 4.35997,
+        "vgs": 8.362694,
+        "vic": 3.469514,
+        "vlogic": 5.000000
+      },
+      "criteria": [
+        {
+          "metric": "vdly_on",
+          "resolved": "vdly_on",
+          "operator": ">=",
+          "threshold": 2,
+          "value": 4.35997,
+          "raw_value": "4.35997e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "s, задержка включения при Vcc=25 В"
+        },
+        {
+          "metric": "vdly_on",
+          "resolved": "vdly_on",
+          "operator": "<=",
+          "threshold": 6,
+          "value": 4.35997,
+          "raw_value": "4.35997e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "s"
+        },
+        {
+          "metric": "iled",
+          "resolved": "iled",
+          "operator": ">=",
+          "threshold": 0.010,
+          "value": 0.01105203,
+          "raw_value": "1.105203e-02",
+          "status": "PASS",
+          "reason": "",
+          "note": "A"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC16_dc_trip_vcc60",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC16_dc_trip_vcc60.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC16_dc_trip_vcc60.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.839,
+      "measurements": {
+        "t_delay": 0.176212,
+        "t_det": 5.17621,
+        "t_off": 0.00000170832,
+        "t_vgs_off": 5.17621,
+        "vlatch_end": 4.999989
+      },
+      "criteria": [
+        {
+          "metric": "t_delay",
+          "resolved": "t_delay",
+          "operator": "<=",
+          "threshold": 1.0,
+          "value": 0.176212,
+          "raw_value": "1.76212e-01",
+          "status": "PASS",
+          "reason": "",
+          "note": "s, детекция DC при Vcc=60 В"
+        },
+        {
+          "metric": "t_off",
+          "resolved": "t_off",
+          "operator": "<=",
+          "threshold": 0.002,
+          "value": 0.00000170832,
+          "raw_value": "1.70832e-06",
+          "status": "PASS",
+          "reason": "",
+          "note": "s"
+        },
+        {
+          "metric": "vlatch_end",
+          "resolved": "vlatch_end",
+          "operator": ">=",
+          "threshold": 2.5,
+          "value": 4.999989,
+          "raw_value": "4.999989e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC17_speaker_rl_bemf",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC17_speaker_rl_bemf.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC17_speaker_rl_bemf.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 7.963,
+      "measurements": {
+        "e_clamp": 0.03154413,
+        "ikey0": 5.189323,
+        "itvs_pk": 0.0001816942,
+        "t_det": 5.00219,
+        "vsw_pk": 54.66212,
+        "vsw_pk2": 54.66212
+      },
+      "criteria": [
+        {
+          "metric": "vsw_pk",
+          "resolved": "vsw_pk",
+          "operator": "abs<=",
+          "threshold": 60,
+          "value": 54.66212,
+          "raw_value": "5.466212e+01 at=  5.002189e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "В, пик на ключе при размыкании (рейтинг 60 В)"
+        },
+        {
+          "metric": "e_clamp",
+          "resolved": "e_clamp",
+          "operator": "<=",
+          "threshold": 0.5,
+          "value": 0.03154413,
+          "raw_value": "3.154413e-02",
+          "status": "PASS",
+          "reason": "",
+          "note": "Дж, энергия, поглощённая ограничителем (аналитика 1/2*L*I^2 = 13.5 мДж; деталь подбирать >= 0.5 Дж)"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC18_blocking",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC18_blocking.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC18_blocking.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.856,
+      "measurements": {
+        "ileak_neg": -0.0003931786,
+        "ileak_pos": 0.0003247859,
+        "vlatch_end": 4.999989,
+        "vsw_neg": 50.00000,
+        "vsw_pos": 50.00000
+      },
+      "criteria": [
+        {
+          "metric": "ileak_pos",
+          "resolved": "ileak_pos",
+          "operator": "abs<=",
+          "threshold": 0.001,
+          "value": 0.0003247859,
+          "raw_value": "3.247859e-04",
+          "status": "PASS",
+          "reason": "",
+          "note": "А, утечка закрытого ключа при +50 В"
+        },
+        {
+          "metric": "ileak_neg",
+          "resolved": "ileak_neg",
+          "operator": "abs<=",
+          "threshold": 0.001,
+          "value": -0.0003931786,
+          "raw_value": "-3.931786e-04",
+          "status": "PASS",
+          "reason": "",
+          "note": "А, утечка при -50 В (ловит ошибку включения ограничителя «анод-катод-анод»)"
+        },
+        {
+          "metric": "vsw_pos",
+          "resolved": "vsw_pos",
+          "operator": ">=",
+          "threshold": 45,
+          "value": 50.00000,
+          "raw_value": "5.000000e+01",
+          "status": "PASS",
+          "reason": "",
+          "note": "В, ключ держит +50 В"
+        },
+        {
+          "metric": "vsw_neg",
+          "resolved": "vsw_neg",
+          "operator": ">=",
+          "threshold": 45,
+          "value": 50.00000,
+          "raw_value": "5.000000e+01",
+          "status": "PASS",
+          "reason": "",
+          "note": "В, ключ держит -50 В"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC1_power_on",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC1_power_on.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC1_power_on.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.503,
+      "measurements": {
+        "iled": 0.01105203,
+        "vcs": 7.435243E-14,
+        "vdly_on": 4.36492,
+        "vg1": 8.362694,
+        "vgs": 8.36269,
+        "vpin6_off": 10.67328,
+        "vpin6_on": 0.3315609,
+        "vsout": -2.335645E-19
+      },
+      "criteria": [
+        {
+          "metric": "vpin6_off",
+          "resolved": "vpin6_off",
+          "operator": ">=",
+          "threshold": 5,
+          "value": 10.67328,
+          "raw_value": "1.067328e+01",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, PIN6 open (LED off) before T_ON"
+        },
+        {
+          "metric": "vpin6_off",
+          "resolved": "vpin6_off",
+          "operator": "<=",
+          "threshold": 45,
+          "value": 10.67328,
+          "raw_value": "1.067328e+01",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, R5 limit on PIN6 in off state"
+        },
+        {
+          "metric": "vpin6_on",
+          "resolved": "vpin6_on",
+          "operator": "<=",
+          "threshold": 1,
+          "value": 0.3315609,
+          "raw_value": "3.315609e-01",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, PIN6 saturated (LED on)"
+        },
+        {
+          "metric": "iled",
+          "resolved": "iled",
+          "operator": ">=",
+          "threshold": 0.010,
+          "value": 0.01105203,
+          "raw_value": "1.105203e-02",
+          "status": "PASS",
+          "reason": "",
+          "note": "A, VOM1271 IF 10..15 mA"
+        },
+        {
+          "metric": "iled",
+          "resolved": "iled",
+          "operator": "<=",
+          "threshold": 0.015,
+          "value": 0.01105203,
+          "raw_value": "1.105203e-02",
+          "status": "PASS",
+          "reason": "",
+          "note": "A"
+        },
+        {
+          "metric": "vgs",
+          "resolved": "vgs",
+          "operator": ">=",
+          "threshold": 7,
+          "value": 8.36269,
+          "raw_value": "8.36269e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, V(GATE,CS)"
+        },
+        {
+          "metric": "vsout",
+          "resolved": "vsout",
+          "operator": "abs<=",
+          "threshold": 0.05,
+          "value": -2.335645E-19,
+          "raw_value": "-2.335645e-19",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, SPK near 0 with key closed"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC2_rds25",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC2_rds25.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC2_rds25.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 1.211,
+      "measurements": {
+        "ikey": -9.981038,
+        "rds_key": -0.00519770,
+        "vamp": 0.09981038,
+        "voff_out": 0.09981038,
+        "vspk": 0.1516889
+      },
+      "criteria": [
+        {
+          "metric": "rds_key",
+          "resolved": "rds_key",
+          "operator": "abs<=",
+          "threshold": 0.020,
+          "value": -0.00519770,
+          "raw_value": "-5.19770e-03",
+          "status": "PASS",
+          "reason": "",
+          "note": "ohm, total two devices at 25 C"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC2b_rds100",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC2b_rds100.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC2b_rds100.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 1.228,
+      "measurements": {
+        "ikey": -9.980173,
+        "rds_key": -0.00589257,
+        "vamp": 0.09980173,
+        "voff_out": 0.09980173,
+        "vspk": 0.1586106
+      },
+      "criteria": [
+        {
+          "metric": "rds_key",
+          "resolved": "rds_key",
+          "operator": "abs<=",
+          "threshold": 0.020,
+          "value": -0.00589257,
+          "raw_value": "-5.89257e-03",
+          "status": "PASS",
+          "reason": "",
+          "note": "ohm, total two devices at 100 C"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC3_dc_pos",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC3_dc_pos.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC3_dc_pos.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.887,
+      "measurements": {
+        "t_delay": 0.176212,
+        "t_det": 5.17621,
+        "t_off": 0.00000170832,
+        "t_vgs_off": 5.17621,
+        "vflt_end": 5.000000,
+        "vlatch_end": 4.999989,
+        "vn2_post": 0.9348463,
+        "vn2_pre": -1.315694E-19
+      },
+      "criteria": [
+        {
+          "metric": "t_delay",
+          "resolved": "t_delay",
+          "operator": "<=",
+          "threshold": 1.0,
+          "value": 0.176212,
+          "raw_value": "1.76212e-01",
+          "status": "PASS",
+          "reason": "",
+          "note": "s, T_DC (R7: время детекции DC <= 1 с, определение: от прихода DC до VFLT=2.5 В)"
+        },
+        {
+          "metric": "vn2_post",
+          "resolved": "vn2_post",
+          "operator": ">=",
+          "threshold": 0.62,
+          "value": 0.9348463,
+          "raw_value": "9.348463e-01",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, positive DC threshold reached"
+        },
+        {
+          "metric": "t_off",
+          "resolved": "t_off",
+          "operator": "<=",
+          "threshold": 0.002,
+          "value": 0.00000170832,
+          "raw_value": "1.70832e-06",
+          "status": "PASS",
+          "reason": "",
+          "note": "s, key turn-off (R11 <=2 ms)"
+        },
+        {
+          "metric": "vflt_end",
+          "resolved": "vflt_end",
+          "operator": ">=",
+          "threshold": 2.5,
+          "value": 5.000000,
+          "raw_value": "5.000000e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, fault flag set"
+        },
+        {
+          "metric": "vlatch_end",
+          "resolved": "vlatch_end",
+          "operator": ">=",
+          "threshold": 2.5,
+          "value": 4.999989,
+          "raw_value": "4.999989e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, fault latched"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC4_dc_neg",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC4_dc_neg.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC4_dc_neg.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.881,
+      "measurements": {
+        "t_delay": 0.0328796,
+        "t_det": 5.03288,
+        "t_off": 3.78739E-7,
+        "t_vgs_off": 5.03288,
+        "vflt_end": 5.000000,
+        "vlatch_end": 4.999989,
+        "vn2_post": -0.9348465,
+        "vn2_pre": -1.315694E-19
+      },
+      "criteria": [
+        {
+          "metric": "t_delay",
+          "resolved": "t_delay",
+          "operator": "<=",
+          "threshold": 1.0,
+          "value": 0.0328796,
+          "raw_value": "3.28796e-02",
+          "status": "PASS",
+          "reason": "",
+          "note": "s, T_DC (отрицательная полярность)"
+        },
+        {
+          "metric": "vn2_post",
+          "resolved": "vn2_post",
+          "operator": "<=",
+          "threshold": -0.17,
+          "value": -0.9348465,
+          "raw_value": "-9.348465e-01",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, negative DC threshold reached"
+        },
+        {
+          "metric": "t_off",
+          "resolved": "t_off",
+          "operator": "<=",
+          "threshold": 0.002,
+          "value": 3.78739E-7,
+          "raw_value": "3.78739e-07",
+          "status": "PASS",
+          "reason": "",
+          "note": "s, key turn-off (R11 <=2 ms)"
+        },
+        {
+          "metric": "vflt_end",
+          "resolved": "vflt_end",
+          "operator": ">=",
+          "threshold": 2.5,
+          "value": 5.000000,
+          "raw_value": "5.000000e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, fault flag set"
+        },
+        {
+          "metric": "vlatch_end",
+          "resolved": "vlatch_end",
+          "operator": ">=",
+          "threshold": 2.5,
+          "value": 4.999989,
+          "raw_value": "4.999989e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, fault latched"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC5_overload",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC5_overload.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC5_overload.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 1.372,
+      "measurements": {
+        "ikey_off": 0.00008503780,
+        "ikey_pre": 0.0001282381,
+        "iled_on": 0.01105203,
+        "t_trip": 5.00083,
+        "vcs_off": 0.1394167,
+        "vcs_on": -1.467527E-14,
+        "vg_off": 0.1394167,
+        "vg_on": 8.362694,
+        "vgs_off": 3.97419E-10,
+        "vgs_on": 8.36269,
+        "vlatch": 4.999989,
+        "vovl": 0.6702943
+      },
+      "criteria": [
+        {
+          "metric": "vovl",
+          "resolved": "vovl",
+          "operator": "abs>=",
+          "threshold": 0.67,
+          "value": 0.6702943,
+          "raw_value": "6.702943e-01 at=  5.000825e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, overload detector threshold"
+        },
+        {
+          "metric": "vgs_off",
+          "resolved": "vgs_off",
+          "operator": "<=",
+          "threshold": 0.5,
+          "value": 3.97419E-10,
+          "raw_value": "3.97419e-10",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, key closed after trip"
+        },
+        {
+          "metric": "vlatch",
+          "resolved": "vlatch",
+          "operator": ">=",
+          "threshold": 2.5,
+          "value": 4.999989,
+          "raw_value": "4.999989e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, fault latched"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC6_acoff",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC6_acoff.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC6_acoff.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.612,
+      "measurements": {
+        "t_acloss": 5.07075,
+        "t_off": 8.86332E-7,
+        "t_out": 5.07075,
+        "vac4_before": 6.313823
+      },
+      "criteria": [
+        {
+          "metric": "vac4_before",
+          "resolved": "vac4_before",
+          "operator": ">=",
+          "threshold": 0.74,
+          "value": 6.313823,
+          "raw_value": "6.313823e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, AC present before loss"
+        },
+        {
+          "metric": "t_off",
+          "resolved": "t_off",
+          "operator": "<=",
+          "threshold": 0.1,
+          "value": 8.86332E-7,
+          "raw_value": "8.86332e-07",
+          "status": "PASS",
+          "reason": "",
+          "note": "s, AC loss -> gate off <= 100 ms"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC7a_latch",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC7a_latch.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC7a_latch.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.843,
+      "measurements": {
+        "vcs_after": -1.136993,
+        "vcs_fault": 0.04061247,
+        "vg_after": -1.136993,
+        "vg_fault": 0.04061247,
+        "vgs_after": -2.57838E-12,
+        "vgs_fault": 1.18480E-12,
+        "vlatch_after": 4.999989
+      },
+      "criteria": [
+        {
+          "metric": "vgs_fault",
+          "resolved": "vgs_fault",
+          "operator": "<=",
+          "threshold": 0.5,
+          "value": 1.18480E-12,
+          "raw_value": "1.18480e-12",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, key closed during fault"
+        },
+        {
+          "metric": "vgs_after",
+          "resolved": "vgs_after",
+          "operator": "<=",
+          "threshold": 0.5,
+          "value": -2.57838E-12,
+          "raw_value": "-2.57838e-12",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, LATCH: key stays closed after fault clears"
+        },
+        {
+          "metric": "vlatch_after",
+          "resolved": "vlatch_after",
+          "operator": ">=",
+          "threshold": 2.5,
+          "value": 4.999989,
+          "raw_value": "4.999989e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, latch state held"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC7b_autoreset",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC7b_autoreset.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC7b_autoreset.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 2.797,
+      "measurements": {
+        "vcs_after": -4.812175E-15,
+        "vcs_fault": 0.04092274,
+        "vg_after": 8.362694,
+        "vg_fault": 0.04092274,
+        "vgs_after": 8.36269,
+        "vgs_fault": 1.19218E-12,
+        "vlatch_after": 2.363131E-315
+      },
+      "criteria": [
+        {
+          "metric": "vgs_fault",
+          "resolved": "vgs_fault",
+          "operator": "<=",
+          "threshold": 0.5,
+          "value": 1.19218E-12,
+          "raw_value": "1.19218e-12",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, key closed while fault present"
+        },
+        {
+          "metric": "vgs_after",
+          "resolved": "vgs_after",
+          "operator": ">=",
+          "threshold": 7,
+          "value": 8.36269,
+          "raw_value": "8.36269e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "V, key re-enabled after fault clears"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC8_signal8",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC8_signal8.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC8_signal8.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 4.911,
+      "measurements": {
+        "imax": 2.495441,
+        "loss_db": -0.00564144,
+        "rds_dyn": 0.00519727,
+        "vpk_amp": 19.97504,
+        "vpk_spk": 19.96207,
+        "vzc": 5.983420E-7
+      },
+      "criteria": [
+        {
+          "metric": "loss_db",
+          "resolved": "loss_db",
+          "operator": "abs<=",
+          "threshold": 0.05,
+          "value": -0.00564144,
+          "raw_value": "-5.64144e-03",
+          "status": "PASS",
+          "reason": "",
+          "note": "dB, вносимые потери ключа (2xRds к 8 Ом)"
+        },
+        {
+          "metric": "rds_dyn",
+          "resolved": "rds_dyn",
+          "operator": "abs<=",
+          "threshold": 0.02,
+          "value": 0.00519727,
+          "raw_value": "5.19727e-03",
+          "status": "PASS",
+          "reason": "",
+          "note": "Ом, динамическое сопротивление ключа под сигналом"
+        },
+        {
+          "metric": "vzc",
+          "resolved": "vzc",
+          "operator": "abs<=",
+          "threshold": 0.01,
+          "value": 5.983420E-7,
+          "raw_value": "5.983420e-07",
+          "status": "PASS",
+          "reason": "",
+          "note": "В, остаток на переходе через нуль (нет ступеньки)"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC8b_signal4",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC8b_signal4.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC8b_signal4.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 5.004,
+      "measurements": {
+        "imax": 3.734876,
+        "loss_db": -0.0112794,
+        "rds_dyn": 0.00519752,
+        "vpk_amp": 14.95837,
+        "vpk_spk": 14.93896,
+        "vzc": 0.000001133531
+      },
+      "criteria": [
+        {
+          "metric": "loss_db",
+          "resolved": "loss_db",
+          "operator": "abs<=",
+          "threshold": 0.05,
+          "value": -0.0112794,
+          "raw_value": "-1.12794e-02",
+          "status": "PASS",
+          "reason": "",
+          "note": "dB, то же для 4 Ом (15 Впик: ток < порога перегрузки 5 А)"
+        },
+        {
+          "metric": "rds_dyn",
+          "resolved": "rds_dyn",
+          "operator": "abs<=",
+          "threshold": 0.02,
+          "value": 0.00519752,
+          "raw_value": "5.19752e-03",
+          "status": "PASS",
+          "reason": "",
+          "note": "Ом"
+        },
+        {
+          "metric": "vzc",
+          "resolved": "vzc",
+          "operator": "abs<=",
+          "threshold": 0.01,
+          "value": 0.000001133531,
+          "raw_value": "1.133531e-06",
+          "status": "PASS",
+          "reason": "",
+          "note": "В"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    },
+    {
+      "test": "TC9_soa",
+      "file": "/tmp/ssr-prot/work/uPC1237_SSR/tests/TC9_soa.cir",
+      "log": "/tmp/ssr-prot/work/uPC1237_SSR/ci_logs/TC9_soa.log",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 3.830,
+      "measurements": {
+        "e_analytic": 0.000312454,
+        "e_int": 0.003954620,
+        "e_off_info": 0.00395462,
+        "ikey0": 20.70269,
+        "t_delay": 0.00000325496,
+        "t_det": 5.00000,
+        "t_off": 6.03698E-7,
+        "t_vgs_off": 5.00000
+      },
+      "criteria": [
+        {
+          "metric": "ikey0",
+          "resolved": "ikey0",
+          "operator": "abs>=",
+          "threshold": 20,
+          "value": 20.70269,
+          "raw_value": "2.070269e+01 at=  5.000001e+00",
+          "status": "PASS",
+          "reason": "",
+          "note": "A, fault current before turn-off"
+        },
+        {
+          "metric": "t_off",
+          "resolved": "t_off",
+          "operator": "<=",
+          "threshold": 0.002,
+          "value": 6.03698E-7,
+          "raw_value": "6.03698e-07",
+          "status": "PASS",
+          "reason": "",
+          "note": "s, key turn-off (R11 <=2 ms)"
+        },
+        {
+          "metric": "e_int",
+          "resolved": "e_int",
+          "operator": "<=",
+          "threshold": 0.01,
+          "value": 0.003954620,
+          "raw_value": "3.954620e-03",
+          "status": "PASS",
+          "reason": "",
+          "note": "J, энергия выключения (физический интегратор BINT/CINT; 3.95 мДж после подавления drain-induced turn-on); ср. e_analytic"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "benign_warnings": [],
+      "reason": ""
+    }
+  ]
+}
